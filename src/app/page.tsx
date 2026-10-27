@@ -49,14 +49,14 @@ function HandArrow({ className = "" }: { className?: string }) {
 const FEATURE_GROUPS = [
   [
     { title: "See your screen", example: "“what's this error?”", keys: "⌃ ⌥" },
-    { title: "Read the page you're on", example: "“is article ka summary do”", keys: "⌃ ⇧" },
+    { title: "Read the page you're on", example: "“summarise this article”", keys: "⌃ ⇧" },
     { title: "Draw on your screen", example: "circles and highlights as she explains", keys: "⌃ ⌥" },
   ],
   [
     { title: "Sort your Gmail, draft replies", example: "“any interview mails today?”", keys: "⌃ ⇧" },
-    { title: "Open, quit and switch apps", example: "“Notes kholo, music band karo”", keys: "⌃ ⇧" },
+    { title: "Open, quit and switch apps", example: "“open Notes, pause the music”", keys: "⌃ ⇧" },
     { title: "Run your browser", example: "“new tab, search for flights to Goa”", keys: "⌃ ⇧" },
-    { title: "Search the web", example: "“aaj ka mausam kaisa hai?”", keys: "⌃ ⇧" },
+    { title: "Search the web", example: "“what's the weather today?”", keys: "⌃ ⇧" },
   ],
   [
     { title: "Remember you", example: "“remember, my exam is on Friday”", keys: "⌃ ⇧" },
@@ -73,10 +73,6 @@ const FAQS = [
   {
     question: "How much will it cost?",
     answer: "That isn't decided yet. The waitlist comes first, and people on it hear about it before anyone else.",
-  },
-  {
-    question: "Which languages does she speak?",
-    answer: "English and Hindi, including both mixed in one sentence. Her voice is Simran.",
   },
   {
     question: "How does she read my Gmail?",
@@ -109,7 +105,7 @@ export default function Home() {
         </a>
         <nav aria-label="Sections" className="hidden items-center gap-7 text-[16px] font-medium text-moon/85 md:flex">
           <a href="#stage" className="hover:text-moon hover:underline">How it works</a>
-          <a href="#doubts" className="hover:text-moon hover:underline">English + Hindi</a>
+          <a href="#doubts" className="hover:text-moon hover:underline">Her voice</a>
           <a href="#privacy" className="hover:text-moon hover:underline">Privacy</a>
           <a href="#faq" className="hover:text-moon hover:underline">FAQ</a>
         </nav>
@@ -131,7 +127,7 @@ export default function Home() {
           </h1>
           <p className="mx-auto mt-6 max-w-[62ch] text-[clamp(1.05rem,1.6vw,1.25rem)] leading-relaxed text-moon/80">
             Maya lives in your menu bar. Hold two keys and say what you need: she sees your screen, reads your Gmail,
-            opens apps and runs the browser, then answers out loud, in English or Hindi.
+            opens apps and runs the browser, then answers out loud.
           </p>
           <div className="mx-auto mt-9 flex max-w-[860px] flex-col items-center justify-center gap-5 sm:flex-row sm:items-start">
             <WaitlistForm source="hero" />
@@ -170,25 +166,23 @@ export default function Home() {
             </div>
 
             <div className="mt-20 flex flex-col gap-24">
-              {/* Language */}
+              {/* Voice */}
               <article className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
                 <div>
                   <StruckDoubt>It won&apos;t get how I talk</StruckDoubt>
                   <h3 className="mt-4 font-display text-[clamp(2.2rem,5vw,3.75rem)] leading-[1.04] text-moon uppercase">
-                    English. Hindi. <Block tone="star">Both at once.</Block>
+                    Talk normally. <Block tone="star">She keeps up.</Block>
                   </h3>
                   <p className="mt-5 max-w-[58ch] text-lg leading-relaxed text-moon/80">
-                    Say it the way you&apos;d say it to a friend. Maya follows you when you switch languages mid-sentence,
-                    and answers in her own voice: Simran, warm and clear in both.
+                    No commands to memorise. Say it the way you&apos;d say it to a friend, and Maya answers out loud in her
+                    own voice: Simran, warm and clear.
                   </p>
                 </div>
                 <div className="flex flex-col items-start gap-5 lg:items-end">
-                  <VoiceClip src="/audio/maya-hindi.mp3" label="Hear her in Hindi" caption="Hindi with English words, 10 sec" tone="star" />
-                  <p lang="hi" className="cut max-w-md rotate-[1.2deg] rounded-2xl bg-paper px-5 py-4 font-hand text-xl leading-snug font-bold text-ink">
-                    “नमस्ते! मैं Maya हूँ। आपकी screen देख सकती हूँ, mails पढ़ सकती हूँ, और सिर्फ़ आपके कहने पर काम करती हूँ।”
-                    <span className="mt-2 block font-sans text-[14px] font-medium text-ink/70">
-                      Hi! I&apos;m Maya. I can see your screen and read your mail, and I only act when you ask.
-                    </span>
+                  <VoiceClip src="/audio/maya-english.mp3" label="Hear her say it" caption="Her real voice, 6 sec" tone="star" />
+                  <p className="cut max-w-md rotate-[1.2deg] rounded-2xl bg-paper px-5 py-4 font-hand text-xl leading-snug font-bold text-ink">
+                    “Hi, I&apos;m Maya. I live in your Mac&apos;s menu bar. Hold two keys, tell me what you need, and I&apos;ll take
+                    it from there.”
                   </p>
                 </div>
               </article>

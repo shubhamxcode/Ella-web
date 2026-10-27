@@ -1,7 +1,7 @@
 import { Sparkle } from "lucide-react";
 
 const TICKER_ITEMS = [
-  "Talks back in English and Hindi",
+  "Talks back out loud",
   "Reads your Gmail",
   "Draws on your screen",
   "Runs your browser",

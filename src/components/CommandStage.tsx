@@ -18,10 +18,8 @@ type Scenario = {
   keys: [string, string];
   keysLabel: string;
   heard: string;
-  heardInEnglish?: string;
   steps: string[];
   reply: string;
-  replyInEnglish?: string;
 };
 
 const SCENARIOS: Scenario[] = [
@@ -30,11 +28,9 @@ const SCENARIOS: Scenario[] = [
     chip: "Check my Gmail",
     keys: ["⌃", "⇧"],
     keysLabel: "Control + Shift",
-    heard: "Hey Maya, aaj ki important mails dikhao",
-    heardInEnglish: "show me today's important mail",
+    heard: "Hey Maya, show me today's important emails",
     steps: ["Read 7 days of inbox, on your Mac", "Sorted into 10 groups", "3 need you today"],
-    reply: "तीन ज़रूरी mails हैं, और एक interview का भी!",
-    replyInEnglish: "Three need you, and one is an interview!",
+    reply: "Three need you today, and one is an interview!",
   },
   {
     id: "screen",
@@ -50,11 +46,9 @@ const SCENARIOS: Scenario[] = [
     chip: "Open Notes, lower the volume",
     keys: ["⌃", "⇧"],
     keysLabel: "Control + Shift",
-    heard: "Notes kholo aur volume thoda kam karo",
-    heardInEnglish: "open Notes and turn the volume down a bit",
+    heard: "Open Notes and turn the volume down a bit",
     steps: ["Opened Notes", "Volume 70% → 40%"],
-    reply: "Notes खोल दिया, volume भी कम कर दिया।",
-    replyInEnglish: "Opened Notes, and turned the volume down.",
+    reply: "Opened Notes, and turned the volume down.",
   },
 ];
 
@@ -183,7 +177,7 @@ export function CommandStage() {
         </p>
       </div>
       <p className="sr-only" aria-live="polite">
-        {shownPhase === "speaking" || shownPhase === "holding" ? `Maya: ${scenario.replyInEnglish ?? scenario.reply}` : ""}
+        {shownPhase === "speaking" || shownPhase === "holding" ? `Maya: ${scenario.reply}` : ""}
       </p>
     </div>
   );
@@ -245,9 +239,6 @@ function VoiceCard({
           {phase === "listening" && <span className="ml-0.5 inline-block h-[1.05em] w-[0.55em] translate-y-[0.18em] bg-lav" />}
           {typedCount === scenario.heard.length && <span className="text-lav">”</span>}
         </p>
-        {scenario.heardInEnglish && typedCount === scenario.heard.length && (
-          <p className="mt-1 text-sm text-lav-l/70">({scenario.heardInEnglish})</p>
-        )}
       </div>
 
       <ul className="flex flex-col gap-2">
@@ -277,10 +268,7 @@ function VoiceCard({
             isReplying ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"
           }`}
         >
-          <p lang={scenario.replyInEnglish ? "hi" : "en"} className="font-hand text-lg leading-snug font-bold">
-            {scenario.reply}
-          </p>
-          {scenario.replyInEnglish && <p className="text-[13px] text-ink/70">{scenario.replyInEnglish}</p>}
+          <p className="font-hand text-lg leading-snug font-bold">{scenario.reply}</p>
         </div>
       </div>
     </div>
