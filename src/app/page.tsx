@@ -140,7 +140,7 @@ export default function Home() {
               <HandArrow className="hidden h-12 w-14 rotate-[18deg] text-lav md:block" />
             </p>
             <div className="pointer-events-none absolute -top-[210px] -right-16 hidden xl:block">
-              <OwnerAvatar pose="wave" height={250} priority />
+              <OwnerAvatar pose="pointing" height={250} priority />
             </div>
             <CommandStage />
           </div>
@@ -299,7 +299,7 @@ export default function Home() {
               <span className="mb-10 hidden sm:block">
                 <MayaFace size={120} title="Maya, winking" />
               </span>
-              <OwnerAvatar pose="finger-guns" height={360} />
+              <OwnerAvatar pose="pointing" height={360} />
             </div>
           </div>
         </section>

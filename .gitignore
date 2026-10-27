@@ -45,3 +45,4 @@ next-env.d.ts
 
 # Impeccable design workspace (local)
 .impeccable/
+art/

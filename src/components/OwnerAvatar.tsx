@@ -4,17 +4,17 @@ import Image from "next/image";
 
 /**
  * The owner's hoodie character, one pose per transparent PNG in
- * public/avatar/ (wave.png, thinking.png, magnifier.png, finger-guns.png).
+ * public/avatar/ (pointing.png today; thinking.png and magnifier.png still to come).
+ * The art carries its own white sticker outline, so only the drop shadow is added here.
  * Until a pose's file exists, development shows a labelled empty slot and
  * production shows nothing, so the live site never carries a stand-in.
  */
-export type AvatarPose = "wave" | "thinking" | "magnifier" | "finger-guns";
+export type AvatarPose = "pointing" | "thinking" | "magnifier";
 
 const POSE_DESCRIPTIONS: Record<AvatarPose, string> = {
-  wave: "waving hi",
+  pointing: "finger up, about to say something",
   thinking: "hand on chin, thinking",
   magnifier: "holding a magnifying glass",
-  "finger-guns": "finger guns and a wink",
 };
 
 export function OwnerAvatar({
@@ -36,7 +36,7 @@ export function OwnerAvatar({
       <Image
         src={`/avatar/${fileName}`}
         alt=""
-        width={Math.round(height * 0.8)}
+        width={Math.round(height * 0.78)}
         height={height}
         priority={priority}
         className={`sticker h-auto w-auto select-none ${className}`}
