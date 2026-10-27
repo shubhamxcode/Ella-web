@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Markdown notes and docs stay local (owner decision, same as the Maya repo)
 *.md
+
+# Impeccable design workspace (local)
+.impeccable/
