@@ -154,11 +154,6 @@ a {
   animation: spin-slow 16s linear infinite;
 }
 
-/* A cut-out character lifted off the page. The art brings its own white outline. */
-.sticker {
-  filter: drop-shadow(6px 8px 0 rgb(5 4 15 / 0.55));
-}
-
 /* Maya's face (MayaFace.tsx). Each part moves around its own centre. */
 .maya-breathe,
 .maya-blink,

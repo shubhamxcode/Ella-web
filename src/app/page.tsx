@@ -2,7 +2,6 @@ import { Mail } from "lucide-react";
 import type { ReactNode } from "react";
 import { CommandStage } from "@/components/CommandStage";
 import { MayaFace } from "@/components/MayaFace";
-import { OwnerAvatar } from "@/components/OwnerAvatar";
 import { SpinBadge } from "@/components/SpinBadge";
 import { Ticker } from "@/components/Ticker";
 import { VoiceClip } from "@/components/VoiceClip";
@@ -139,9 +138,6 @@ export default function Home() {
               watch her work, or pick a command
               <HandArrow className="hidden h-12 w-14 rotate-[18deg] text-lav md:block" />
             </p>
-            <div className="pointer-events-none absolute -top-[210px] -right-16 hidden xl:block">
-              <OwnerAvatar pose="pointing" height={250} priority />
-            </div>
             <CommandStage />
           </div>
         </section>
@@ -162,7 +158,6 @@ export default function Home() {
                   </span>
                 </h2>
               </div>
-              <OwnerAvatar pose="thinking" height={260} className="self-end" />
             </div>
 
             <div className="mt-20 flex flex-col gap-24">
@@ -220,9 +215,6 @@ export default function Home() {
                 </div>
                 <div className="relative flex justify-center lg:justify-end">
                   <PrivacyReceipt />
-                  <div className="pointer-events-none absolute -bottom-10 -left-6 hidden md:block">
-                    <OwnerAvatar pose="magnifier" height={220} />
-                  </div>
                 </div>
               </article>
             </div>
@@ -295,11 +287,8 @@ export default function Home() {
                 <WaitlistForm source="footer" tone="lav" />
               </div>
             </div>
-            <div className="relative flex items-end justify-center gap-2 md:justify-end">
-              <span className="mb-10 hidden sm:block">
-                <MayaFace size={120} title="Maya, winking" />
-              </span>
-              <OwnerAvatar pose="pointing" height={360} />
+            <div className="relative hidden justify-center pb-24 md:flex md:justify-end">
+              <MayaFace size={200} title="Maya, winking" />
             </div>
           </div>
         </section>
