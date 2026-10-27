@@ -178,7 +178,7 @@ export function CommandStage() {
             keysAreDown={keysAreDown}
           />
         </div>
-        <p className="absolute bottom-2 left-4 font-label text-[11px] uppercase tracking-widest text-lav-l/60">
+        <p className="absolute bottom-2 left-4 font-label text-[12px] uppercase tracking-widest text-lav-l/85">
           Sample data · demo
         </p>
       </div>

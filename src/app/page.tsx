@@ -379,7 +379,7 @@ function MailCardMock() {
           <Mail size={17} strokeWidth={2.4} /> Send
         </span>
       </div>
-      <p className="mt-3 font-label text-[11px] uppercase tracking-widest text-ink/45">Sample data</p>
+      <p className="mt-3 font-label text-[12px] uppercase tracking-widest text-ink/70">Sample data</p>
     </div>
   );
 }
@@ -401,7 +401,7 @@ function PrivacyReceipt() {
     <div className="relative w-full max-w-[430px] rotate-[1.8deg]">
       <div className="cut rounded-t-md bg-star px-6 pt-6 pb-8 font-mono text-[13px] text-ink">
         <p className="text-center font-display text-2xl tracking-wide uppercase">Maya · privacy</p>
-        <p className="mt-1 text-center text-[12px] text-ink/60">what leaves your Mac</p>
+        <p className="mt-1 text-center text-[13px] text-ink/75">what leaves your Mac</p>
         <div className="my-4 border-t-2 border-dashed border-ink/40" />
         <ul className="flex flex-col gap-2.5">
           {RECEIPT_LINES.map((line) => (
@@ -416,7 +416,7 @@ function PrivacyReceipt() {
           <span>Writes without your OK</span>
           <span className="rounded bg-lav px-1.5">0</span>
         </p>
-        <p className="mt-5 text-center text-[12px] text-ink/60">thank you · now go talk to your Mac</p>
+        <p className="mt-5 text-center text-[13px] text-ink/75">thank you · now go talk to your Mac</p>
       </div>
       {/* The torn edge of the receipt paper. */}
       <svg className="-mt-px block w-full" viewBox="0 0 360 14" preserveAspectRatio="none" aria-hidden>
