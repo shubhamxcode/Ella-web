@@ -1,7 +1,7 @@
-import { MayaFace } from "./MayaFace";
+import { EllaFace } from "./EllaFace";
 
 /**
- * The round sticker in the corner: a spinning ring of text around Maya, linking to the waitlist.
+ * The round sticker in the corner: a spinning ring of text around Ella, linking to the waitlist.
  * Hidden below md: at phone width a fixed badge covered the copy and forms (seen at 390px),
  * and the nav's "Join waitlist" pill is always in reach there.
  */
@@ -21,7 +21,7 @@ export function SpinBadge() {
         </text>
       </svg>
       <span className="relative">
-        <MayaFace size={30} />
+        <EllaFace size={30} />
       </span>
     </a>
   );

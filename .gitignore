@@ -40,7 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Markdown notes and docs stay local (owner decision, same as the Maya repo)
+# Markdown notes and docs stay local (owner decision, same as the Ella repo)
 *.md
 
 # Impeccable design workspace (local)

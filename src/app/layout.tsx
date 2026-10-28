@@ -10,15 +10,15 @@ const jetbrains = JetBrains_Mono({ variable: "--font-jetbrains", weight: ["500",
 const kalam = Kalam({ variable: "--font-kalam", weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://heymaya.tech"),
-  title: "Maya: talk to your Mac. It talks back.",
+  metadataBase: new URL("https://heyyella.com"),
+  title: "Ella: talk to your Mac. It talks back.",
   description:
-    "Maya is a voice assistant for your Mac. Hold two keys and talk: she sees your screen, reads your Gmail, opens apps and runs the browser, and answers out loud. Join the waitlist.",
+    "Ella is a voice assistant for your Mac. Hold two keys and talk: she sees your screen, reads your Gmail, opens apps and runs the browser, and answers out loud. Join the waitlist.",
   openGraph: {
-    title: "Maya: talk to your Mac. It talks back.",
+    title: "Ella: talk to your Mac. It talks back.",
     description: "A voice assistant that lives in your Mac's menu bar. Coming soon to Mac.",
-    url: "https://heymaya.tech",
-    siteName: "Maya",
+    url: "https://heyyella.com",
+    siteName: "Ella",
     type: "website",
   },
 };

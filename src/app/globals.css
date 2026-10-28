@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Maya's Night Terrace colours, cut as neo-brutalist paper. */
+/* Ella's Night Terrace colours, cut as neo-brutalist paper. */
 @theme inline {
   --color-night: #100f24;
   --color-night-2: #17153a;
@@ -154,27 +154,27 @@ a {
   animation: spin-slow 16s linear infinite;
 }
 
-/* Maya's face (MayaFace.tsx). Each part moves around its own centre. */
-.maya-breathe,
-.maya-blink,
-.maya-talk,
-.maya-ring-in,
-.maya-ring-out {
+/* Ella's face (EllaFace.tsx). Each part moves around its own centre. */
+.ella-breathe,
+.ella-blink,
+.ella-talk,
+.ella-ring-in,
+.ella-ring-out {
   transform-box: fill-box;
   transform-origin: center;
 }
 
-@keyframes maya-breathe {
+@keyframes ella-breathe {
   50% {
     transform: scale(1.025);
   }
 }
 
-.maya-breathe {
-  animation: maya-breathe 5s ease-in-out infinite;
+.ella-breathe {
+  animation: ella-breathe 5s ease-in-out infinite;
 }
 
-@keyframes maya-blink {
+@keyframes ella-blink {
   0%,
   94%,
   100% {
@@ -185,11 +185,11 @@ a {
   }
 }
 
-.maya-blink {
-  animation: maya-blink 4.6s ease-in-out infinite;
+.ella-blink {
+  animation: ella-blink 4.6s ease-in-out infinite;
 }
 
-@keyframes maya-talk {
+@keyframes ella-talk {
   0%,
   100% {
     transform: scaleY(0.55);
@@ -205,13 +205,13 @@ a {
   }
 }
 
-.maya-talk {
+.ella-talk {
   transform-origin: top;
-  animation: maya-talk 0.42s ease-in-out infinite;
+  animation: ella-talk 0.42s ease-in-out infinite;
 }
 
 /* Rings flow out while she speaks, and in while she listens. */
-@keyframes maya-ring-out {
+@keyframes ella-ring-out {
   from {
     transform: scale(1.02);
     opacity: 0.85;
@@ -222,7 +222,7 @@ a {
   }
 }
 
-@keyframes maya-ring-in {
+@keyframes ella-ring-in {
   from {
     transform: scale(1.55);
     opacity: 0;
@@ -233,22 +233,22 @@ a {
   }
 }
 
-.maya-ring-out {
-  animation: maya-ring-out 1.65s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+.ella-ring-out {
+  animation: ella-ring-out 1.65s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
-.maya-ring-in {
-  animation: maya-ring-in 1.65s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+.ella-ring-in {
+  animation: ella-ring-in 1.65s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ticker-track,
   .spin-slow,
-  .maya-breathe,
-  .maya-blink,
-  .maya-talk,
-  .maya-ring-in,
-  .maya-ring-out {
+  .ella-breathe,
+  .ella-blink,
+  .ella-talk,
+  .ella-ring-in,
+  .ella-ring-out {
     animation: none;
   }
 }

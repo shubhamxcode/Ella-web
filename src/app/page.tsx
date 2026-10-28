@@ -1,7 +1,7 @@
 import { Mail } from "lucide-react";
 import type { ReactNode } from "react";
 import { CommandStage } from "@/components/CommandStage";
-import { MayaFace } from "@/components/MayaFace";
+import { EllaFace } from "@/components/EllaFace";
 import { SpinBadge } from "@/components/SpinBadge";
 import { Ticker } from "@/components/Ticker";
 import { VoiceClip } from "@/components/VoiceClip";
@@ -44,7 +44,7 @@ function HandArrow({ className = "" }: { className?: string }) {
   );
 }
 
-/** Maya's menu, grouped the way a macOS menu separates its sections. */
+/** Ella's menu, grouped the way a macOS menu separates its sections. */
 const FEATURE_GROUPS = [
   [
     { title: "See your screen", example: "“what's this error?”", keys: "⌃ ⌥" },
@@ -65,7 +65,7 @@ const FEATURE_GROUPS = [
 
 const FAQS = [
   {
-    question: "Which Macs will Maya run on?",
+    question: "Which Macs will Ella run on?",
     answer:
       "Macs on macOS 14.2 or later. She asks for the microphone, Accessibility and Screen Recording, plus Full Disk Access only if you connect Gmail.",
   },
@@ -76,10 +76,10 @@ const FAQS = [
   {
     question: "How does she read my Gmail?",
     answer:
-      "Through Apple Mail on your Mac: add your Gmail account there, then pick it in Maya. She reads only that account, only when you ask, and sends her AI model just subjects and first lines to sort and answer.",
+      "Through Apple Mail on your Mac: add your Gmail account there, then pick it in Ella. She reads only that account, only when you ask, and sends her AI model just subjects and first lines to sort and answer.",
   },
   {
-    question: "Can Maya send an email on her own?",
+    question: "Can Ella send an email on her own?",
     answer: "No. She can write a draft for you to edit. The Send button on her mail card, pressed by you, is the only way mail goes out.",
   },
   {
@@ -93,11 +93,11 @@ export default function Home() {
     <>
       {/* Nav */}
       <header className="on-night mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 px-[clamp(18px,4vw,40px)] pt-6">
-        <a href="#top" className="flex items-center gap-2.5" aria-label="Maya home">
+        <a href="#top" className="flex items-center gap-2.5" aria-label="Ella home">
           <span className="-my-4 -ml-3">
-            <MayaFace size={28} />
+            <EllaFace size={28} />
           </span>
-          <span className="font-display text-[28px] tracking-wide text-moon uppercase">Maya</span>
+          <span className="font-display text-[28px] tracking-wide text-moon uppercase">Ella</span>
           <span className="cut-sm -rotate-3 rounded-md bg-lav px-2 py-0.5 font-label text-sm font-bold uppercase tracking-wider text-ink">
             for Mac
           </span>
@@ -125,12 +125,12 @@ export default function Home() {
             <Block>It talks back.</Block>
           </h1>
           <p className="mx-auto mt-6 max-w-[62ch] text-[clamp(1.05rem,1.6vw,1.25rem)] leading-relaxed text-moon/80">
-            Maya lives in your menu bar. Hold two keys and say what you need: she sees your screen, reads your Gmail,
+            Ella lives in your menu bar. Hold two keys and say what you need: she sees your screen, reads your Gmail,
             opens apps and runs the browser, then answers out loud.
           </p>
           <div className="mx-auto mt-9 flex max-w-[860px] flex-col items-center justify-center gap-5 sm:flex-row sm:items-start">
             <WaitlistForm source="hero" />
-            <VoiceClip src="/audio/maya-english.mp3" label="Hear Maya" caption="Her real voice, 6 sec" />
+            <VoiceClip src="/audio/ella-english.mp3" label="Hear Ella" caption="Her real voice, 6 sec" />
           </div>
 
           <div id="stage" className="relative mt-16 scroll-mt-10">
@@ -169,14 +169,14 @@ export default function Home() {
                     Talk normally. <Block tone="star">She keeps up.</Block>
                   </h3>
                   <p className="mt-5 max-w-[58ch] text-lg leading-relaxed text-moon/80">
-                    No commands to memorise. Say it the way you&apos;d say it to a friend, and Maya answers out loud in her
+                    No commands to memorise. Say it the way you&apos;d say it to a friend, and Ella answers out loud in her
                     own voice: Simran, warm and clear.
                   </p>
                 </div>
                 <div className="flex flex-col items-start gap-5 lg:items-end">
-                  <VoiceClip src="/audio/maya-english.mp3" label="Hear her say it" caption="Her real voice, 6 sec" tone="star" />
+                  <VoiceClip src="/audio/ella-english.mp3" label="Hear her say it" caption="Her real voice, 6 sec" tone="star" />
                   <p className="cut max-w-md rotate-[1.2deg] rounded-2xl bg-paper px-5 py-4 font-hand text-xl leading-snug font-bold text-ink">
-                    “Hi, I&apos;m Maya. I live in your Mac&apos;s menu bar. Hold two keys, tell me what you need, and I&apos;ll take
+                    “Hi, I&apos;m Ella. I live in your Mac&apos;s menu bar. Hold two keys, tell me what you need, and I&apos;ll take
                     it from there.”
                   </p>
                 </div>
@@ -190,7 +190,7 @@ export default function Home() {
                     Nothing sends <Block>until you press Send.</Block>
                   </h3>
                   <p className="mt-5 max-w-[58ch] text-lg leading-relaxed text-moon/80">
-                    Reading is instant. Anything that changes something waits for you. Maya writes the reply, you edit it,
+                    Reading is instant. Anything that changes something waits for you. Ella writes the reply, you edit it,
                     and the Send button is yours: it&apos;s the only way mail leaves, and she can&apos;t press it by voice.
                   </p>
                 </div>
@@ -207,7 +207,7 @@ export default function Home() {
                     She reads it <Block tone="star">on your Mac.</Block>
                   </h3>
                   <p className="mt-5 max-w-[58ch] text-lg leading-relaxed text-moon/80">
-                    Maya reads Gmail from Apple Mail&apos;s own files on your Mac, only when you ask, and only the account
+                    Ella reads Gmail from Apple Mail&apos;s own files on your Mac, only when you ask, and only the account
                     you pick. To sort it and answer you, she sends her AI model just the bits it needs, like subjects and
                     first lines, never your whole inbox, and we don&apos;t store it. Your memories and conversations
                     are locked to your account, and there&apos;s no analytics.
@@ -236,18 +236,18 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Maya's menu, opened from her face in the menu bar. */}
+            {/* Ella's menu, opened from her face in the menu bar. */}
             <div className="w-full">
               <div className="cut-sm flex items-center justify-end gap-4 rounded-t-xl bg-paper-2 px-4 py-1.5 text-[13px] font-semibold">
                 <span className="rounded-md bg-lav px-1.5 py-0.5" aria-hidden>
                   <span className="-my-4 inline-flex">
-                    <MayaFace size={16} mood="listening" />
+                    <EllaFace size={16} mood="listening" />
                   </span>
                 </span>
                 <span className="tabular-nums">9:41</span>
               </div>
               <div className="cut ml-auto w-full rounded-b-2xl bg-white p-1.5 sm:w-[94%]">
-                <p className="px-3 pt-2 pb-1 font-label text-[14px] font-bold uppercase tracking-wider text-ink/70">Maya can</p>
+                <p className="px-3 pt-2 pb-1 font-label text-[14px] font-bold uppercase tracking-wider text-ink/70">Ella can</p>
                 {FEATURE_GROUPS.map((group, groupIndex) => (
                   <ul key={groupIndex} className={groupIndex > 0 ? "mt-1 border-t-2 border-ink/12 pt-1" : undefined}>
                     {group.map((feature) => (
@@ -281,14 +281,14 @@ export default function Home() {
                 <Block tone="ink">Start talking.</Block>
               </h2>
               <p className="mt-6 max-w-[52ch] text-xl leading-relaxed text-ink/85">
-                Maya is coming soon to Mac. Join the waitlist and you&apos;ll hear first.
+                Ella is coming soon to Mac. Join the waitlist and you&apos;ll hear first.
               </p>
               <div className="mt-8">
                 <WaitlistForm source="footer" tone="lav" />
               </div>
             </div>
             <div className="relative hidden justify-center pb-24 md:flex md:justify-end">
-              <MayaFace size={200} title="Maya, winking" />
+              <EllaFace size={200} title="Ella, winking" />
             </div>
           </div>
         </section>
@@ -320,9 +320,9 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-[1180px] flex-col justify-between gap-3 px-[clamp(18px,4vw,40px)] py-8 text-[15px] text-moon/70 sm:flex-row sm:items-center">
           <p className="flex items-center gap-2">
             <span className="-my-4 -ml-2">
-              <MayaFace size={20} />
+              <EllaFace size={20} />
             </span>
-            Maya · heymaya.tech · Coming soon to Mac
+            Ella · heyyella.com · Coming soon to Mac
           </p>
           <p>Demo screens on this page use sample data.</p>
         </div>
@@ -341,7 +341,7 @@ function Kbd({ children }: { children: ReactNode }) {
   );
 }
 
-/** Maya's mail card, as it looks on a Mac: her draft, your Send button. Sample data. */
+/** Ella's mail card, as it looks on a Mac: her draft, your Send button. Sample data. */
 function MailCardMock() {
   return (
     <div className="cut -rotate-[1.4deg] rounded-[20px] bg-paper p-5 text-ink">
@@ -352,7 +352,7 @@ function MailCardMock() {
         </div>
         <span className="rounded-full border-2 border-ink bg-star px-2 py-0.5 font-label text-xs font-bold uppercase">Interview</span>
       </div>
-      <p className="mt-3 font-label text-sm font-bold uppercase tracking-wide text-plum">Maya&apos;s draft · edit anything</p>
+      <p className="mt-3 font-label text-sm font-bold uppercase tracking-wide text-plum">Ella&apos;s draft · edit anything</p>
       <p className="mt-1.5 rounded-xl border-2 border-dashed border-ink/35 bg-white p-3 text-[15px] leading-relaxed">
         Hi Riya, thank you! Thursday at 3:30 PM works for me. Could you share the meeting link? Looking forward to it.
       </p>
@@ -383,7 +383,7 @@ function PrivacyReceipt() {
   return (
     <div className="relative w-full max-w-[430px] rotate-[1.8deg]">
       <div className="cut rounded-t-md bg-star px-6 pt-6 pb-8 font-mono text-[13px] text-ink">
-        <p className="text-center font-display text-2xl tracking-wide uppercase">Maya · privacy</p>
+        <p className="text-center font-display text-2xl tracking-wide uppercase">Ella · privacy</p>
         <p className="mt-1 text-center text-[13px] text-ink/75">what leaves your Mac</p>
         <div className="my-4 border-t-2 border-dashed border-ink/40" />
         <ul className="flex flex-col gap-2.5">

@@ -2,9 +2,9 @@
 
 import { Pause, Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { MayaFace } from "./MayaFace";
+import { EllaFace } from "./EllaFace";
 
-/** Plays a real clip of Maya's voice (Simran on Sarvam, rendered by Maya's own worker). */
+/** Plays a real clip of Ella's voice (Simran on Sarvam, rendered by Ella's own worker). */
 export function VoiceClip({
   src,
   label,
@@ -38,7 +38,7 @@ export function VoiceClip({
       audio.pause();
       return;
     }
-    // Only one Maya talks at a time.
+    // Only one Ella talks at a time.
     document.querySelectorAll("audio").forEach((otherAudio) => {
       if (otherAudio !== audio) otherAudio.pause();
     });
@@ -61,7 +61,7 @@ export function VoiceClip({
       }`}
     >
       <span className="-my-4 -ml-2 shrink-0">
-        <MayaFace mood={isPlaying ? "speaking" : "resting"} size={34} />
+        <EllaFace mood={isPlaying ? "speaking" : "resting"} size={34} />
       </span>
       <span className="flex flex-col">
         <span className="flex items-center gap-1.5 font-label text-[17px] font-bold uppercase tracking-wide">

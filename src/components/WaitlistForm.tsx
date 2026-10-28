@@ -73,7 +73,7 @@ export function WaitlistForm({ source, tone = "night" }: { source: string; tone?
           isProblem ? (tone === "lav" ? "font-semibold text-ink" : "font-semibold text-blush") : tone === "lav" ? "text-ink/75" : "text-lav-l/80"
         }`}
       >
-        {state.message || "No spam. One email when Maya is ready for your Mac."}
+        {state.message || "No spam. One email when Ella is ready for your Mac."}
       </p>
     </form>
   );

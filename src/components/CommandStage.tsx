@@ -2,10 +2,10 @@
 
 import { Check, Mail, NotebookPen, ScanEye, Volume2 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
-import { MayaFace, type MayaMood } from "./MayaFace";
+import { EllaFace, type EllaMood } from "./EllaFace";
 
 /**
- * The signature interaction: Maya working on a Mac, one command at a time.
+ * The signature interaction: Ella working on a Mac, one command at a time.
  * keys → listening (the words type in) → thinking (steps tick) →
  * speaking (her reply) → holding (the result stays) → next command.
  * Every name, email and number on the stage is sample data.
@@ -28,7 +28,7 @@ const SCENARIOS: Scenario[] = [
     chip: "Check my Gmail",
     keys: ["⌃", "⇧"],
     keysLabel: "Control + Shift",
-    heard: "Hey Maya, show me today's important emails",
+    heard: "Hey Ella, show me today's important emails",
     steps: ["Read 7 days of inbox, on your Mac", "Sorted into 10 groups", "3 need you today"],
     reply: "Three need you today, and one is an interview!",
   },
@@ -52,7 +52,7 @@ const SCENARIOS: Scenario[] = [
   },
 ];
 
-const PHASE_MOOD: Record<Phase, MayaMood> = {
+const PHASE_MOOD: Record<Phase, EllaMood> = {
   keys: "resting",
   listening: "listening",
   thinking: "thinking",
@@ -140,7 +140,7 @@ export function CommandStage() {
   return (
     <div ref={stageRef} className="w-full">
       {/* Pick a command */}
-      <div className="mb-5 flex flex-wrap justify-center gap-2.5" role="group" aria-label="Pick a command for Maya">
+      <div className="mb-5 flex flex-wrap justify-center gap-2.5" role="group" aria-label="Pick a command for Ella">
         {SCENARIOS.map((choice, choiceIndex) => {
           const isCurrent = choiceIndex === scenarioIndex;
           return (
@@ -177,13 +177,13 @@ export function CommandStage() {
         </p>
       </div>
       <p className="sr-only" aria-live="polite">
-        {shownPhase === "speaking" || shownPhase === "holding" ? `Maya: ${scenario.reply}` : ""}
+        {shownPhase === "speaking" || shownPhase === "holding" ? `Ella: ${scenario.reply}` : ""}
       </p>
     </div>
   );
 }
 
-function MenuBar({ mood }: { mood: MayaMood }) {
+function MenuBar({ mood }: { mood: EllaMood }) {
   return (
     <div className="flex items-center justify-between border-b-[2.5px] border-ink bg-paper px-4 py-1.5 text-[13px] font-semibold text-ink">
       <div className="flex gap-4">
@@ -194,7 +194,7 @@ function MenuBar({ mood }: { mood: MayaMood }) {
       </div>
       <div className="flex items-center gap-3">
         <span className="-my-3 inline-flex scale-[0.85]">
-          <MayaFace mood={mood} size={18} />
+          <EllaFace mood={mood} size={18} />
         </span>
         <span className="tabular-nums">9:41</span>
       </div>
@@ -261,7 +261,7 @@ function VoiceCard({
 
       <div className="mt-auto flex items-end gap-3">
         <span className="-mb-4 -ml-4 shrink-0">
-          <MayaFace mood={PHASE_MOOD[phase]} size={46} />
+          <EllaFace mood={PHASE_MOOD[phase]} size={46} />
         </span>
         <div
           className={`cut-sm relative rounded-2xl rounded-bl-sm bg-paper px-3.5 py-2 text-ink transition-all duration-300 ${
@@ -275,7 +275,7 @@ function VoiceCard({
   );
 }
 
-/** Where Maya's cursor lands for each command, in % of the result window. */
+/** Where Ella's cursor lands for each command, in % of the result window. */
 const CURSOR_TARGETS: Record<Scenario["id"], { left: string; top: string }> = {
   mail: { left: "46%", top: "34%" },
   screen: { left: "60%", top: "50%" },
@@ -291,19 +291,19 @@ function ResultWindow({
   scenario: Scenario;
   isShown: boolean;
   cursorIsAtTarget: boolean;
-  cursorMood: MayaMood;
+  cursorMood: EllaMood;
 }) {
   const cursorPosition = cursorIsAtTarget ? CURSOR_TARGETS[scenario.id] : { left: "94%", top: "2%" };
   return (
     <div className="cut relative min-h-[17rem] overflow-hidden rounded-[18px] bg-paper text-ink">
-      {/* Maya's face is her cursor, as in the app: it flies from the menu bar to what she's working on. */}
+      {/* Ella's face is her cursor, as in the app: it flies from the menu bar to what she's working on. */}
       <span
         className="pointer-events-none absolute z-20 -translate-x-1/2 -translate-y-1/2 transition-[left,top] duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none"
         style={cursorPosition}
         aria-hidden
       >
         <span className="block drop-shadow-[2px_3px_0_rgb(28_22_58/0.35)]">
-          <MayaFace mood={cursorMood} size={24} />
+          <EllaFace mood={cursorMood} size={24} />
         </span>
       </span>
       <div className="flex items-center gap-2 border-b-2 border-ink/80 px-3.5 py-2">
@@ -313,7 +313,7 @@ function ResultWindow({
         <span className="ml-2 flex items-center gap-1.5 font-label text-sm font-bold uppercase tracking-wide">
           {scenario.id === "mail" && (
             <>
-              <Mail size={15} strokeWidth={2.4} /> Maya · Mail digest
+              <Mail size={15} strokeWidth={2.4} /> Ella · Mail digest
             </>
           )}
           {scenario.id === "screen" && (
@@ -393,7 +393,7 @@ function ChartWithDrawing({ isShown }: { isShown: boolean }) {
             />
             <span className="font-label text-sm font-bold uppercase">{bar.month}</span>
             {bar.month === "Mar" && (
-              /* Maya's pen: a hand-drawn ring around March, drawn as she speaks. */
+              /* Ella's pen: a hand-drawn ring around March, drawn as she speaks. */
               <svg
                 className="pointer-events-none absolute -inset-x-4 -top-5 -bottom-2 h-[calc(100%+1.75rem)] w-[calc(100%+2rem)]"
                 viewBox="0 0 100 100"

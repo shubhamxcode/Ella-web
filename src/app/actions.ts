@@ -1,7 +1,7 @@
 "use server";
 
 /**
- * Adds an email to the Maya waitlist (Supabase `waitlist` table).
+ * Adds an email to the Ella waitlist (Supabase `waitlist` table).
  * The table only allows inserts with the public key (row-level security),
  * so nobody can read the list from the website.
  */
@@ -43,11 +43,11 @@ export async function joinWaitlist(_previousState: WaitlistState, formData: Form
     });
 
     if (response.ok) {
-      return { status: "joined", message: "You're on the list. Maya will write when she's ready for your Mac." };
+      return { status: "joined", message: "You're on the list. Ella will write when she's ready for your Mac." };
     }
     // A unique email that's already there.
     if (response.status === 409) {
-      return { status: "already", message: "You're already on the list. Maya hasn't forgotten you." };
+      return { status: "already", message: "You're already on the list. Ella hasn't forgotten you." };
     }
     console.error("Waitlist insert failed", response.status, await response.text());
     return { status: "error", message: "Couldn't save that just now. Try again in a minute." };
