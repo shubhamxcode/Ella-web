@@ -167,7 +167,8 @@ export function IntroFilm() {
         hasEnded = true;
         setPhase("ended");
       }
-      const level = voiceLevelRef.current && !audio.muted && !audio.paused ? Math.min(voiceLevelRef.current() * 5, 1) : rhythmLevel(time);
+      const measuredLevel = voiceLevelRef.current && !audio.muted && !audio.paused ? voiceLevelRef.current() : 0;
+      const level = measuredLevel > 0 ? Math.min(measuredLevel * 5, 1) : rhythmLevel(time);
       if (mouth) mouth.style.transform = `scaleY(${(0.32 + level * 0.95).toFixed(3)})`;
       const cue = FILM_CUES.find((filmCue) => time >= filmCue.start - 0.15 && time <= filmCue.end + 0.4);
       const nextCaption = cue?.line ?? "";
@@ -392,6 +393,9 @@ async function loadGsap(): Promise<GSAP> {
 
 /** The voice's loudness (0 to about 0.3), from a Web Audio analyser on the film's audio. One per audio element. */
 function connectVoiceMeter(audio: HTMLMediaElement, meterRef: React.RefObject<{ context: AudioContext; analyser: AnalyserNode } | null>) {
+  // Phones: sending the voice through Web Audio makes an iPhone in silent mode play nothing at all.
+  // There the voice plays straight from the media element, and the mouth follows her words instead.
+  if (window.matchMedia("(pointer: coarse)").matches) return () => 0;
   try {
     if (!meterRef.current) {
       const context = new AudioContext();
