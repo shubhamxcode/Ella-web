@@ -252,3 +252,47 @@ a {
     animation: none;
   }
 }
+
+/* Long-read pages (privacy, terms): calm type on the paper card. */
+.legal {
+  font-size: 17px;
+  line-height: 1.7;
+}
+.legal h2 {
+  margin-top: 2.2em;
+  font-family: var(--font-label);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.legal h2:first-child {
+  margin-top: 0;
+}
+.legal h3 {
+  margin-top: 1.4em;
+  font-size: 18px;
+  font-weight: 700;
+}
+.legal p,
+.legal ul {
+  margin-top: 0.8em;
+  max-width: 68ch;
+}
+.legal ul {
+  padding-left: 1.3em;
+  list-style: disc;
+}
+.legal li + li {
+  margin-top: 0.35em;
+}
+.legal a {
+  color: var(--color-plum);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal strong {
+  font-weight: 700;
+}

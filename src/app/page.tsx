@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Mail } from "lucide-react";
 import type { ReactNode } from "react";
 import { CommandStage } from "@/components/CommandStage";
@@ -324,7 +325,11 @@ export default function Home() {
             </span>
             Ella · heyyella.com · Coming soon to Mac
           </p>
-          <p>Demo screens on this page use sample data.</p>
+          <p className="flex flex-wrap gap-x-5 gap-y-1">
+            <span>Demo screens on this page use sample data.</span>
+            <Link href="/privacy" className="hover:text-moon hover:underline">Privacy</Link>
+            <Link href="/terms" className="hover:text-moon hover:underline">Terms</Link>
+          </p>
         </div>
       </footer>
 
