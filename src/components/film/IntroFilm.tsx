@@ -38,6 +38,8 @@ export function IntroFilm() {
   const audioRef = useRef<HTMLVideoElement>(null);
   const cleanupRef = useRef<(() => void) | null>(null);
   const audioMeterRef = useRef<{ context: AudioContext; analyser: AnalyserNode } | null>(null);
+  /** The film's time in seconds. Its own clock, so phones that pause or refuse a muted video can't freeze the film. */
+  const filmTimeRef = useRef<(() => number) | null>(null);
   /** Reads the real loudness of her voice once sound is on (needs a click to set up). */
   const voiceLevelRef = useRef<(() => number) | null>(null);
 
@@ -89,6 +91,9 @@ export function IntroFilm() {
   const turnSoundOn = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
+    // The voice joins the film where it is now.
+    const filmTime = filmTimeRef.current?.() ?? 0;
+    if (Math.abs(audio.currentTime - filmTime) > 0.25) audio.currentTime = filmTime;
     audio.muted = false;
     voiceLevelRef.current = connectVoiceMeter(audio, audioMeterRef);
     setIsMuted(false);
@@ -126,15 +131,12 @@ export function IntroFilm() {
     }
     // Development only: ?filmMuted=1 starts muted, like a brand-new visitor's browser.
     const startsMutedForTesting = process.env.NODE_ENV !== "production" && new URLSearchParams(window.location.search).has("filmMuted");
-    let isPlaying = startsMutedForTesting && !hasUserGesture ? false : await audio.play().then(() => true, () => false);
-    if (!isPlaying && !hasUserGesture) {
+    const playsWithSound = startsMutedForTesting && !hasUserGesture ? false : await audio.play().then(() => true, () => false);
+    if (!playsWithSound) {
+      // No sound before a click: the picture runs anyway (muted video if the browser allows it, else silent), and the first tap brings the voice in.
       audio.muted = true;
       setIsMuted(true);
-      isPlaying = await audio.play().then(() => true, () => false);
-    }
-    if (!isPlaying) {
-      setPhase("blocked");
-      return;
+      void audio.play().catch(() => undefined);
     }
 
     const gsap = await loadGsap();
@@ -146,22 +148,35 @@ export function IntroFilm() {
 
     // Ella's mouth opens with her voice: its real loudness once sound is on, her words' rhythm while muted.
     const mouth = stage.querySelector<SVGGElement>(".actor-mouth");
+    // While her voice is audibly playing it sets the time (so lips and words stay on it); otherwise a steady clock does.
+    let clockStartedAt = performance.now() / 1000 - (playsWithSound ? audio.currentTime : 0);
+    const filmTime = () => {
+      if (!audio.muted && !audio.paused && audio.readyState >= 2) {
+        clockStartedAt = performance.now() / 1000 - audio.currentTime;
+        return audio.currentTime;
+      }
+      return performance.now() / 1000 - clockStartedAt;
+    };
+    filmTimeRef.current = filmTime;
     let lastCaption = "";
+    let hasEnded = false;
     const follow = () => {
-      const time = audio.currentTime;
+      const time = filmTime();
       timeline?.time(Math.min(time, FILM_DURATION));
-      const level = voiceLevelRef.current && !audio.muted ? Math.min(voiceLevelRef.current() * 5, 1) : rhythmLevel(time);
+      if (time >= FILM_DURATION && !hasEnded) {
+        hasEnded = true;
+        setPhase("ended");
+      }
+      const level = voiceLevelRef.current && !audio.muted && !audio.paused ? Math.min(voiceLevelRef.current() * 5, 1) : rhythmLevel(time);
       if (mouth) mouth.style.transform = `scaleY(${(0.32 + level * 0.95).toFixed(3)})`;
       const cue = FILM_CUES.find((filmCue) => time >= filmCue.start - 0.15 && time <= filmCue.end + 0.4);
       const nextCaption = cue?.line ?? "";
       if (nextCaption !== lastCaption) setCaption((lastCaption = nextCaption));
     };
     gsap.ticker.add(follow);
-    const onEnded = () => setPhase("ended");
-    audio.addEventListener("ended", onEnded);
     cleanupRef.current = () => {
       gsap.ticker.remove(follow);
-      audio.removeEventListener("ended", onEnded);
+      filmTimeRef.current = null;
       context.revert();
     };
   }, []);
