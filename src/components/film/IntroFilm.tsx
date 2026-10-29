@@ -15,6 +15,7 @@ import Link from "next/link";
 import { Play, Volume2, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { EllaFace } from "@/components/EllaFace";
+import { DOWNLOADS_ENABLED } from "@/lib/release";
 import { buildFilm, FilmStage } from "./FilmStage";
 import { FILM_CUES, FILM_DURATION, FILM_WORDS } from "./filmScript";
 
@@ -87,17 +88,28 @@ export function IntroFilm() {
     return () => window.removeEventListener("keydown", onKey);
   }, [isShown, close]);
 
-  /** Sound on, from a click: unmute and start reading her voice for the mouth. */
+  /**
+   * Sound on, from a tap, click or key: the voice joins the film where it is.
+   * Only counts once the browser really plays it; if it refuses, the film stays
+   * muted and the next tap tries again.
+   */
   const turnSoundOn = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
-    // The voice joins the film where it is now.
     const filmTime = filmTimeRef.current?.() ?? 0;
     if (Math.abs(audio.currentTime - filmTime) > 0.25) audio.currentTime = filmTime;
     audio.muted = false;
-    voiceLevelRef.current = connectVoiceMeter(audio, audioMeterRef);
-    setIsMuted(false);
-    if (audio.paused) void audio.play().catch(() => undefined);
+    // play() must be called right here, inside the tap, for phones to allow sound.
+    audio.play().then(
+      () => {
+        voiceLevelRef.current = connectVoiceMeter(audio, audioMeterRef);
+        setIsMuted(false);
+      },
+      () => {
+        audio.muted = true;
+        void audio.play().catch(() => undefined);
+      },
+    );
   }, []);
 
   // Muted (the browser wouldn't play sound yet): the first click, tap or key press anywhere turns the sound on.
@@ -109,7 +121,9 @@ export function IntroFilm() {
       if (event.target instanceof Element && event.target.closest("[data-film-skip]")) return;
       turnSoundOn();
     };
-    const interactionEvents = ["pointerdown", "keydown", "touchend"] as const;
+    // Only these let a page start sound: a finished tap (touchend, click) or a key. A finger
+    // going down (pointerdown, touchstart) doesn't count on phones.
+    const interactionEvents = ["touchend", "click", "keydown"] as const;
     for (const eventName of interactionEvents) window.addEventListener(eventName, onFirstInteraction, { capture: true });
     return () => {
       for (const eventName of interactionEvents) window.removeEventListener(eventName, onFirstInteraction, { capture: true });
@@ -306,9 +320,15 @@ export function IntroFilm() {
 
       {phase === "ended" && (
         <div className="absolute bottom-8 flex flex-wrap items-center justify-center gap-4 px-4">
-          <Link href="/download" className="press cut flex items-center gap-2 rounded-2xl bg-lav px-7 py-3.5 font-display text-2xl tracking-wide text-ink uppercase">
-            Download for Mac
-          </Link>
+          {DOWNLOADS_ENABLED ? (
+            <Link href="/download" className="press cut flex items-center gap-2 rounded-2xl bg-lav px-7 py-3.5 font-display text-2xl tracking-wide text-ink uppercase">
+              Download for Mac
+            </Link>
+          ) : (
+            <span aria-disabled="true" className="cut flex cursor-not-allowed items-center gap-2 rounded-2xl bg-lav px-7 py-3.5 font-display text-2xl tracking-wide text-ink uppercase opacity-80">
+              Coming soon to Mac
+            </span>
+          )}
           <button type="button" onClick={close} className="press cut-sm cursor-pointer rounded-2xl bg-paper px-6 py-3.5 font-display text-xl tracking-wide text-ink uppercase">
             Explore the site
           </button>

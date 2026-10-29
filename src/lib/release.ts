@@ -1,4 +1,12 @@
 /**
+ * Whether people can download Ella from the site. Off until paid plans are
+ * ready: the button shows "Coming soon" and /download goes back to the home
+ * page. Turn it on by setting this to true (the download Worker has its own
+ * switch, DOWNLOADS_ENABLED in ella/download-worker/wrangler.toml).
+ */
+export const DOWNLOADS_ENABLED = false;
+
+/**
  * The Ella build people download. Update this with every release
  * (`./release.sh <version>` in the app repo prints the size and checksum).
  */

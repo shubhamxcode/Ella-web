@@ -7,6 +7,7 @@ import { SpinBadge } from "@/components/SpinBadge";
 import { Ticker } from "@/components/Ticker";
 import { VoiceClip } from "@/components/VoiceClip";
 import { DownloadButton } from "@/components/DownloadButton";
+import { DOWNLOADS_ENABLED } from "@/lib/release";
 import { IntroFilm, WatchFilmButton } from "@/components/film/IntroFilm";
 
 /** A heading phrase set in a cut-paper highlight block. */
@@ -112,10 +113,10 @@ export default function Home() {
           <a href="#faq" className="hover:text-moon hover:underline">FAQ</a>
         </nav>
         <a
-          href="/download"
+          href={DOWNLOADS_ENABLED ? "/download" : "#download"}
           className="press cut rounded-xl bg-lav px-4 py-2 font-display text-lg tracking-wide text-ink uppercase"
         >
-          Download
+          {DOWNLOADS_ENABLED ? "Download" : "Coming soon"}
         </a>
       </header>
 
