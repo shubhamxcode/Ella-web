@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://heyyella.com"),
   title: "Ella: talk to your Mac. It talks back.",
   description:
-    "Ella is a voice assistant for your Mac. Hold two keys and talk: she sees your screen, reads your Gmail, opens apps and runs the browser, and answers out loud. Join the waitlist.",
+    "Ella is a voice assistant for your Mac. Hold two keys and talk: she sees your screen, reads your Gmail, opens apps and runs the browser, and answers out loud. Free for Mac.",
   openGraph: {
     title: "Ella: talk to your Mac. It talks back.",
-    description: "A voice assistant that lives in your Mac's menu bar. Coming soon to Mac.",
+    description: "A voice assistant that lives in your Mac's menu bar. Free for Mac.",
     url: "https://heyyella.com",
     siteName: "Ella",
     type: "website",

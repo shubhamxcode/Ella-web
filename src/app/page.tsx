@@ -6,7 +6,7 @@ import { EllaFace } from "@/components/EllaFace";
 import { SpinBadge } from "@/components/SpinBadge";
 import { Ticker } from "@/components/Ticker";
 import { VoiceClip } from "@/components/VoiceClip";
-import { WaitlistForm } from "@/components/WaitlistForm";
+import { DownloadButton } from "@/components/DownloadButton";
 
 /** A heading phrase set in a cut-paper highlight block. */
 function Block({ children, tone = "lav" }: { children: ReactNode; tone?: "lav" | "ink" | "star" }) {
@@ -72,7 +72,7 @@ const FAQS = [
   },
   {
     question: "How much will it cost?",
-    answer: "That isn't decided yet. The waitlist comes first, and people on it hear about it before anyone else.",
+    answer: "Ella is free for now. If paid plans ever come, you'll hear before anything changes, and you'll choose.",
   },
   {
     question: "How does she read my Gmail?",
@@ -110,10 +110,10 @@ export default function Home() {
           <a href="#faq" className="hover:text-moon hover:underline">FAQ</a>
         </nav>
         <a
-          href="#waitlist"
+          href="/download"
           className="press cut rounded-xl bg-lav px-4 py-2 font-display text-lg tracking-wide text-ink uppercase"
         >
-          Join waitlist
+          Download
         </a>
       </header>
 
@@ -130,7 +130,7 @@ export default function Home() {
             opens apps and runs the browser, then answers out loud.
           </p>
           <div className="mx-auto mt-9 flex max-w-[860px] flex-col items-center justify-center gap-5 sm:flex-row sm:items-start">
-            <WaitlistForm source="hero" />
+            <DownloadButton />
             <VoiceClip src="/audio/ella-english.mp3" label="Hear Ella" caption="Her real voice, 6 sec" />
           </div>
 
@@ -267,8 +267,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Waitlist */}
-        <section id="waitlist" className="relative scroll-mt-0 overflow-hidden border-b-[2.5px] border-ink bg-lav text-ink">
+        {/* Download */}
+        <section id="download" className="relative scroll-mt-0 overflow-hidden border-b-[2.5px] border-ink bg-lav text-ink">
           <div
             className="absolute inset-0 opacity-100"
             style={{ backgroundImage: "radial-gradient(rgb(28 22 58 / 0.16) 1px, transparent 1.2px)", backgroundSize: "22px 22px" }}
@@ -282,10 +282,10 @@ export default function Home() {
                 <Block tone="ink">Start talking.</Block>
               </h2>
               <p className="mt-6 max-w-[52ch] text-xl leading-relaxed text-ink/85">
-                Ella is coming soon to Mac. Join the waitlist and you&apos;ll hear first.
+                Ella is here for your Mac. Download her, hold two keys, and say hi.
               </p>
               <div className="mt-8">
-                <WaitlistForm source="footer" tone="lav" />
+                <DownloadButton tone="lav" />
               </div>
             </div>
             <div className="relative hidden justify-center pb-24 md:flex md:justify-end">
@@ -323,7 +323,7 @@ export default function Home() {
             <span className="-my-4 -ml-2">
               <EllaFace size={20} />
             </span>
-            Ella · heyyella.com · Coming soon to Mac
+            Ella · heyyella.com · For Mac
           </p>
           <p className="flex flex-wrap gap-x-5 gap-y-1">
             <span>Demo screens on this page use sample data.</span>
