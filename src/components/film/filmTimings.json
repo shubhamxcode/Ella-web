@@ -1,0 +1,587 @@
+{
+ "duration": 33.729,
+ "cues": [
+  {
+   "id": "hello",
+   "start": 1.25,
+   "end": 2.21,
+   "line": "Hi! I'm Ella!"
+  },
+  {
+   "id": "menubar",
+   "start": 2.47,
+   "end": 5.593,
+   "line": "I live in your Mac's menu bar! Hold control and shift, and just talk to me!"
+  },
+  {
+   "id": "talk",
+   "start": 5.853,
+   "end": 9.661,
+   "line": "Ask me anything! In English, or in Hindi, and I'll answer you out loud!"
+  },
+  {
+   "id": "screen",
+   "start": 9.921,
+   "end": 14.096,
+   "line": "Stuck on something? Hold control and option, I'll see your screen, and explain it, with my pen!"
+  },
+  {
+   "id": "mail",
+   "start": 14.356,
+   "end": 17.978,
+   "line": "I read your Gmail, tell you what really needs you, and put your interviews on your calendar!"
+  },
+  {
+   "id": "control",
+   "start": 18.238,
+   "end": 21.064,
+   "line": "I open your apps, run your browser, and I can even type for you!"
+  },
+  {
+   "id": "board",
+   "start": 21.324,
+   "end": 23.375,
+   "line": "Want to see it? I'll sketch it for you, on my whiteboard!"
+  },
+  {
+   "id": "memory",
+   "start": 23.635,
+   "end": 26.479,
+   "line": "I remember what matters to you, and I'll help you hit your goals!"
+  },
+  {
+   "id": "privacy",
+   "start": 26.739,
+   "end": 29.1,
+   "line": "And don't worry! I only listen while you hold the keys."
+  },
+  {
+   "id": "cta",
+   "start": 29.56,
+   "end": 31.669,
+   "line": "I'm Ella! Made for your Mac! Let's talk!"
+  }
+ ],
+ "words": {
+  "hello": [
+   {
+    "w": "Hi!",
+    "t": 1.29
+   },
+   {
+    "w": "I'm",
+    "t": 1.75
+   },
+   {
+    "w": "Ella!",
+    "t": 1.921
+   }
+  ],
+  "menubar": [
+   {
+    "w": "I",
+    "t": 2.49
+   },
+   {
+    "w": "live",
+    "t": 2.652
+   },
+   {
+    "w": "in",
+    "t": 2.916
+   },
+   {
+    "w": "your",
+    "t": 3.078
+   },
+   {
+    "w": "Mac's",
+    "t": 3.241
+   },
+   {
+    "w": "menu",
+    "t": 3.403
+   },
+   {
+    "w": "bar!",
+    "t": 3.667
+   },
+   {
+    "w": "Hold",
+    "t": 4.04
+   },
+   {
+    "w": "control",
+    "t": 4.185
+   },
+   {
+    "w": "and",
+    "t": 4.42
+   },
+   {
+    "w": "shift,",
+    "t": 4.565
+   },
+   {
+    "w": "and",
+    "t": 4.93
+   },
+   {
+    "w": "just",
+    "t": 5.062
+   },
+   {
+    "w": "talk",
+    "t": 5.194
+   },
+   {
+    "w": "to",
+    "t": 5.326
+   },
+   {
+    "w": "me!",
+    "t": 5.458
+   }
+  ],
+  "talk": [
+   {
+    "w": "Ask",
+    "t": 5.873
+   },
+   {
+    "w": "me",
+    "t": 6.085
+   },
+   {
+    "w": "anything!",
+    "t": 6.297
+   },
+   {
+    "w": "In",
+    "t": 6.863
+   },
+   {
+    "w": "English,",
+    "t": 7.065
+   },
+   {
+    "w": "or",
+    "t": 7.493
+   },
+   {
+    "w": "in",
+    "t": 7.653
+   },
+   {
+    "w": "Hindi,",
+    "t": 7.813
+   },
+   {
+    "w": "and",
+    "t": 8.193
+   },
+   {
+    "w": "I'll",
+    "t": 8.413
+   },
+   {
+    "w": "answer",
+    "t": 8.634
+   },
+   {
+    "w": "you",
+    "t": 8.992
+   },
+   {
+    "w": "out",
+    "t": 9.212
+   },
+   {
+    "w": "loud!",
+    "t": 9.433
+   }
+  ],
+  "screen": [
+   {
+    "w": "Stuck",
+    "t": 9.941
+   },
+   {
+    "w": "on",
+    "t": 10.162
+   },
+   {
+    "w": "something?",
+    "t": 10.384
+   },
+   {
+    "w": "Hold",
+    "t": 10.884
+   },
+   {
+    "w": "control",
+    "t": 11.099
+   },
+   {
+    "w": "and",
+    "t": 11.45
+   },
+   {
+    "w": "option,",
+    "t": 11.665
+   },
+   {
+    "w": "I'll",
+    "t": 12.016
+   },
+   {
+    "w": "see",
+    "t": 12.204
+   },
+   {
+    "w": "your",
+    "t": 12.393
+   },
+   {
+    "w": "screen,",
+    "t": 12.581
+   },
+   {
+    "w": "and",
+    "t": 12.77
+   },
+   {
+    "w": "explain",
+    "t": 12.978
+   },
+   {
+    "w": "it,",
+    "t": 13.316
+   },
+   {
+    "w": "with",
+    "t": 13.525
+   },
+   {
+    "w": "my",
+    "t": 13.713
+   },
+   {
+    "w": "pen!",
+    "t": 13.902
+   }
+  ],
+  "mail": [
+   {
+    "w": "I",
+    "t": 14.376
+   },
+   {
+    "w": "read",
+    "t": 14.581
+   },
+   {
+    "w": "your",
+    "t": 14.786
+   },
+   {
+    "w": "Gmail,",
+    "t": 14.991
+   },
+   {
+    "w": "tell",
+    "t": 15.376
+   },
+   {
+    "w": "you",
+    "t": 15.527
+   },
+   {
+    "w": "what",
+    "t": 15.678
+   },
+   {
+    "w": "really",
+    "t": 15.829
+   },
+   {
+    "w": "needs",
+    "t": 16.074
+   },
+   {
+    "w": "you,",
+    "t": 16.225
+   },
+   {
+    "w": "and",
+    "t": 16.466
+   },
+   {
+    "w": "put",
+    "t": 16.625
+   },
+   {
+    "w": "your",
+    "t": 16.784
+   },
+   {
+    "w": "interviews",
+    "t": 16.943
+   },
+   {
+    "w": "on",
+    "t": 17.301
+   },
+   {
+    "w": "your",
+    "t": 17.46
+   },
+   {
+    "w": "calendar!",
+    "t": 17.618
+   }
+  ],
+  "control": [
+   {
+    "w": "I",
+    "t": 18.258
+   },
+   {
+    "w": "open",
+    "t": 18.426
+   },
+   {
+    "w": "your",
+    "t": 18.699
+   },
+   {
+    "w": "apps,",
+    "t": 18.867
+   },
+   {
+    "w": "run",
+    "t": 19.036
+   },
+   {
+    "w": "your",
+    "t": 19.207
+   },
+   {
+    "w": "browser,",
+    "t": 19.379
+   },
+   {
+    "w": "and",
+    "t": 19.658
+   },
+   {
+    "w": "I",
+    "t": 19.828
+   },
+   {
+    "w": "can",
+    "t": 19.997
+   },
+   {
+    "w": "even",
+    "t": 20.167
+   },
+   {
+    "w": "type",
+    "t": 20.443
+   },
+   {
+    "w": "for",
+    "t": 20.718
+   },
+   {
+    "w": "you!",
+    "t": 20.888
+   }
+  ],
+  "board": [
+   {
+    "w": "Want",
+    "t": 21.344
+   },
+   {
+    "w": "to",
+    "t": 21.489
+   },
+   {
+    "w": "see",
+    "t": 21.634
+   },
+   {
+    "w": "it?",
+    "t": 21.779
+   },
+   {
+    "w": "I'll",
+    "t": 21.924
+   },
+   {
+    "w": "sketch",
+    "t": 22.069
+   },
+   {
+    "w": "it",
+    "t": 22.214
+   },
+   {
+    "w": "for",
+    "t": 22.359
+   },
+   {
+    "w": "you,",
+    "t": 22.504
+   },
+   {
+    "w": "on",
+    "t": 22.649
+   },
+   {
+    "w": "my",
+    "t": 22.82
+   },
+   {
+    "w": "whiteboard!",
+    "t": 22.99
+   }
+  ],
+  "memory": [
+   {
+    "w": "I",
+    "t": 23.655
+   },
+   {
+    "w": "remember",
+    "t": 23.857
+   },
+   {
+    "w": "what",
+    "t": 24.31
+   },
+   {
+    "w": "matters",
+    "t": 24.511
+   },
+   {
+    "w": "to",
+    "t": 24.839
+   },
+   {
+    "w": "you,",
+    "t": 25.04
+   },
+   {
+    "w": "and",
+    "t": 25.241
+   },
+   {
+    "w": "I'll",
+    "t": 25.418
+   },
+   {
+    "w": "help",
+    "t": 25.594
+   },
+   {
+    "w": "you",
+    "t": 25.77
+   },
+   {
+    "w": "hit",
+    "t": 25.946
+   },
+   {
+    "w": "your",
+    "t": 26.123
+   },
+   {
+    "w": "goals!",
+    "t": 26.299
+   }
+  ],
+  "privacy": [
+   {
+    "w": "And",
+    "t": 26.759
+   },
+   {
+    "w": "don't",
+    "t": 26.933
+   },
+   {
+    "w": "worry!",
+    "t": 27.107
+   },
+   {
+    "w": "I",
+    "t": 27.489
+   },
+   {
+    "w": "only",
+    "t": 27.652
+   },
+   {
+    "w": "listen",
+    "t": 27.917
+   },
+   {
+    "w": "while",
+    "t": 28.182
+   },
+   {
+    "w": "you",
+    "t": 28.447
+   },
+   {
+    "w": "hold",
+    "t": 28.61
+   },
+   {
+    "w": "the",
+    "t": 28.773
+   },
+   {
+    "w": "keys.",
+    "t": 28.936
+   }
+  ],
+  "cta": [
+   {
+    "w": "I'm",
+    "t": 29.6
+   },
+   {
+    "w": "Ella!",
+    "t": 29.835
+   },
+   {
+    "w": "Made",
+    "t": 30.218
+   },
+   {
+    "w": "for",
+    "t": 30.58
+   },
+   {
+    "w": "your",
+    "t": 30.802
+   },
+   {
+    "w": "Mac!",
+    "t": 31.025
+   },
+   {
+    "w": "Let's",
+    "t": 31.248
+   },
+   {
+    "w": "talk!",
+    "t": 31.454
+   }
+  ]
+ }
+}

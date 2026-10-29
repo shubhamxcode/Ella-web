@@ -17,7 +17,7 @@ export function SpinBadge() {
           <path id="badge-ring" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0" />
         </defs>
         <text fill="#1C163A" style={{ font: "700 13.5px var(--font-barlow)", letterSpacing: "0.22em" }}>
-          <textPath href="#badge-ring">DOWNLOAD ELLA · FREE FOR MAC ·</textPath>
+          <textPath href="#badge-ring">DOWNLOAD ELLA · MADE FOR MAC ·</textPath>
         </text>
       </svg>
       <span className="relative">

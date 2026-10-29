@@ -7,6 +7,7 @@ import { SpinBadge } from "@/components/SpinBadge";
 import { Ticker } from "@/components/Ticker";
 import { VoiceClip } from "@/components/VoiceClip";
 import { DownloadButton } from "@/components/DownloadButton";
+import { IntroFilm, WatchFilmButton } from "@/components/film/IntroFilm";
 
 /** A heading phrase set in a cut-paper highlight block. */
 function Block({ children, tone = "lav" }: { children: ReactNode; tone?: "lav" | "ink" | "star" }) {
@@ -72,7 +73,7 @@ const FAQS = [
   },
   {
     question: "How much will it cost?",
-    answer: "Ella is free for now. If paid plans ever come, you'll hear before anything changes, and you'll choose.",
+    answer: "Plans and prices are coming soon. You'll see exactly what's included and what it costs before anything is charged.",
   },
   {
     question: "How does she read my Gmail?",
@@ -92,6 +93,7 @@ const FAQS = [
 export default function Home() {
   return (
     <>
+      <IntroFilm />
       {/* Nav */}
       <header className="on-night mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 px-[clamp(18px,4vw,40px)] pt-6">
         <a href="#top" className="flex items-center gap-2.5" aria-label="Ella home">
@@ -130,7 +132,10 @@ export default function Home() {
             opens apps and runs the browser, then answers out loud.
           </p>
           <div className="mx-auto mt-9 flex max-w-[860px] flex-col items-center justify-center gap-5 sm:flex-row sm:items-start">
-            <DownloadButton />
+            <div className="flex flex-col items-center gap-3 sm:items-start">
+              <DownloadButton />
+              <WatchFilmButton />
+            </div>
             <VoiceClip src="/audio/ella-english.mp3" label="Hear Ella" caption="Her real voice, 6 sec" />
           </div>
 

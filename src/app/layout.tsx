@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://heyyella.com"),
   title: "Ella: talk to your Mac. It talks back.",
   description:
-    "Ella is a voice assistant for your Mac. Hold two keys and talk: she sees your screen, reads your Gmail, opens apps and runs the browser, and answers out loud. Free for Mac.",
+    "Ella is a voice assistant for your Mac. Hold two keys and talk: she sees your screen, reads your Gmail, opens apps and runs the browser, and answers out loud.",
   openGraph: {
     title: "Ella: talk to your Mac. It talks back.",
-    description: "A voice assistant that lives in your Mac's menu bar. Free for Mac.",
+    description: "A voice assistant that lives in your Mac's menu bar.",
     url: "https://heyyella.com",
     siteName: "Ella",
     type: "website",
@@ -31,8 +31,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      // The script below may add "ella-film-seen" before React loads.
+      suppressHydrationWarning
       className={`${anton.variable} ${barlow.variable} ${figtree.variable} ${jetbrains.variable} ${kalam.variable} antialiased`}
     >
+      <head>
+        {/* Returning visitors never see the intro film flash in before the page knows they've seen it. */}
+        <script dangerouslySetInnerHTML={{ __html: "try{if(localStorage.getItem('ella-film-seen')==='1')document.documentElement.classList.add('ella-film-seen')}catch(e){}" }} />
+      </head>
       <body className="min-h-dvh">{children}</body>
     </html>
   );

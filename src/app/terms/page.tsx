@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms of Service"
-      updated="29 October 2026"
+      updated="30 October 2026"
       intro={
         <p>
           These terms are the agreement between you and Shubham Varshney (&ldquo;we&rdquo;, &ldquo;us&rdquo;), the individual
@@ -73,10 +73,10 @@ export default function TermsPage() {
         Google or Apple sign-in. Their own terms apply to them, and we aren&apos;t responsible for them.
       </p>
 
-      <h2>Price</h2>
+      <h2>Plans and payment</h2>
       <p>
-        Ella is free for now. If we introduce paid plans, we&apos;ll tell you before anything is charged, and
-        you&apos;ll choose whether to pay.
+        Ella will offer paid plans. Before you subscribe, you&apos;ll see what each plan includes and what it costs, and
+        nothing is charged without your agreement.
       </p>
 
       <h2>No warranty</h2>

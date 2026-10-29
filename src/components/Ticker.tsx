@@ -8,7 +8,7 @@ const TICKER_ITEMS = [
   "Opens your apps",
   "Remembers you",
   "Asks before it sends",
-  "Free for Mac",
+  "Made for Mac",
 ];
 
 /** A tilted strip that drifts left forever. Decorative, so screen readers skip it. */

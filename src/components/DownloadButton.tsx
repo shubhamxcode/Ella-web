@@ -15,7 +15,7 @@ export function DownloadButton({ tone = "night" }: { tone?: "night" | "lav" }) {
         Download for Mac
       </a>
       <p className={`mt-3 text-[15px] ${tone === "lav" ? "text-ink/75" : "text-lav-l/80"}`}>
-        Free · {LATEST_RELEASE.minimumMacOS} or later · Apple silicon and Intel · {LATEST_RELEASE.sizeLabel}
+        {LATEST_RELEASE.minimumMacOS} or later · Apple silicon and Intel · {LATEST_RELEASE.sizeLabel}
       </p>
       <p className={`mt-1 text-[15px] ${tone === "lav" ? "text-ink/65" : "text-lav-l/65"}`}>
         Open the file, drag Ella into Applications, then open her.
