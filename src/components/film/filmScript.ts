@@ -12,6 +12,7 @@ export type FilmSceneID =
   | "menubar"
   | "talk"
   | "screen"
+  | "draw"
   | "mail"
   | "control"
   | "board"

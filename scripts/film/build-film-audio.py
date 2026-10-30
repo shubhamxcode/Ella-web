@@ -39,6 +39,7 @@ SCRIPT = [
     ("menubar", "I live in your Mac's menu bar! Hold control and shift, and just talk to me!"),
     ("talk", "Ask me anything! In English, or in Hindi, and I'll answer you out loud!"),
     ("screen", "Stuck on something? Hold control and option, I'll see your screen, and explain it, with my pen!"),
+    ("draw", "Reading a book online? Draw on it, or highlight a line! I'll see it, explain it, and help you read!"),
     ("mail", "I read your Gmail, tell you what really needs you, and put your interviews on your calendar!"),
     ("control", "I open your apps, run your browser, and I can even type for you!"),
     ("board", "Want to see it? I'll sketch it for you, on my whiteboard!"),

@@ -20,7 +20,7 @@ const PAPER_INK = "#2A2450";
 const KEY_WORDS = new Set([
   "ella", "menu", "bar", "two", "keys", "talk", "anything", "english", "hindi", "loud", "screen", "explain", "pen",
   "gmail", "needs", "interviews", "calendar", "apps", "browser", "type", "sketch", "whiteboard", "remember", "goals",
-  "listen", "hold", "mac", "let's", "control", "shift", "option",
+  "listen", "hold", "mac", "let's", "control", "shift", "option", "book", "draw", "highlight",
 ]);
 const BLOCK_COLOURS = ["bg-lav", "bg-star", "bg-mint", "bg-blush"];
 
@@ -30,6 +30,7 @@ const LINE_LAYOUT: Record<FilmSceneID, { top: number; left: number; width: numbe
   menubar: { top: 70, left: 60, width: 1160, size: 70, align: "center" },
   talk: { top: 120, left: 60, width: 640, size: 78, align: "left" },
   screen: { top: 24, left: 50, width: 1180, size: 52, align: "center" },
+  draw: { top: 22, left: 50, width: 1180, size: 46, align: "center" },
   mail: { top: 24, left: 50, width: 1180, size: 52, align: "center" },
   control: { top: 24, left: 60, width: 1160, size: 58, align: "center" },
   board: { top: 18, left: 60, width: 1160, size: 58, align: "center" },
@@ -174,6 +175,24 @@ const MAILS = [
   { from: "Newsletter", subject: "10 tips you didn't ask for", tag: "Promo", kind: "spam" },
 ];
 
+const BOOK_LEFT = [
+  "Every living cell needs a steady",
+  "supply of energy to grow, move",
+  "and repair itself. That job falls",
+  "to tiny parts called mitochondria.",
+  "Mitochondria turn glucose into ATP,",
+  "the fuel that powers the cell.",
+  "Without them, a cell would run",
+  "out of power in minutes.",
+];
+const BOOK_RIGHT = ["Cells that work hard, like muscle,", "carry thousands of mitochondria.", "That's why training makes you", "stronger over time."];
+/** The user's marks on the book, in stage coordinates: a circle round "energy" and a highlighter stroke under line 5. */
+const BOOK_MARKS = {
+  circle: "M410 313 Q410 289 362 289 Q312 289 312 315 Q313 340 362 340 Q414 339 405 304",
+  highlight: "M230 453 L604 453",
+  highlightY: 453,
+};
+
 function FilmProps() {
   return (
     <>
@@ -230,6 +249,44 @@ function FilmProps() {
         <KeyLabel className="film-key-label-screen" left={16} top={530} width={226}>⌃ ⌥ · sees your screen</KeyLabel>
         <span className="film-pill film-pill-wing absolute top-[190px] left-[820px] rounded-full border-2 border-white bg-plum px-4 py-1.5 text-[24px] font-bold text-white">Wings: lift</span>
         <span className="film-pill film-pill-tail absolute top-[470px] left-[440px] rounded-full border-2 border-white bg-plum px-4 py-1.5 text-[24px] font-bold text-white">Tail: steering</span>
+      </Scene>
+
+      {/* Draw: the user circles a word and highlights a line in a book; Ella sees it, explains, and reads along */}
+      <Scene id="draw">
+        <div className="film-book absolute top-[140px] left-[190px] h-[530px] w-[900px] overflow-hidden rounded-[18px] border-[3px] border-ink bg-[#FBF9F3] shadow-[10px_12px_0_#05040f]">
+          <div className="flex h-10 items-center gap-2 border-b-2 border-ink/15 bg-paper px-4">
+            <span className="h-3 w-3 rounded-full bg-[#ff6b6b]" /><span className="h-3 w-3 rounded-full bg-[#ffd166]" /><span className="h-3 w-3 rounded-full bg-[#7ad48a]" />
+            <span className="ml-4 text-[15px] font-semibold text-ink/60">Reader · Biology, Chapter 3</span>
+          </div>
+          <div className="absolute top-10 bottom-0 left-[449px] w-[2px] bg-ink/10" />
+        </div>
+        <svg viewBox="0 0 1280 720" className="pointer-events-none absolute inset-0 h-full w-full overflow-visible">
+          <path id="film-path-highlight" className="film-user-highlight" d={BOOK_MARKS.highlight} fill="none" stroke="#FFD84D" strokeWidth={30} strokeLinecap="round" opacity={0.75} />
+        </svg>
+        <div className="absolute inset-0 font-serif text-[23px] text-[#2A2450]">
+          <p className="absolute top-[200px] left-[230px] font-sans text-[26px] font-bold">Inside the cell</p>
+          {BOOK_LEFT.map((bookLine, lineIndex) => (
+            <p key={bookLine} data-book-line={lineIndex} className="absolute whitespace-nowrap" style={{ left: 230, top: 252 + lineIndex * 46 }}>{bookLine}</p>
+          ))}
+          {BOOK_RIGHT.map((bookLine, lineIndex) => (
+            <p key={bookLine} className="absolute whitespace-nowrap" style={{ left: 680, top: 440 + lineIndex * 46 }}>
+              {bookLine}
+              <span className={`film-follow film-follow-${lineIndex} absolute right-0 -bottom-1 left-0 h-[5px] origin-left scale-x-0 rounded-full bg-lav`} />
+            </p>
+          ))}
+        </div>
+        <svg viewBox="0 0 1280 720" className="pointer-events-none absolute inset-0 h-full w-full overflow-visible">
+          <path id="film-path-circle" className="film-user-circle" d={BOOK_MARKS.circle} fill="none" stroke="#E5484D" strokeWidth={4} strokeLinecap="round" />
+          <rect className="film-book-capture" x={212} y={BOOK_MARKS.highlightY - 30} width={410} height={60} rx={14} fill="none" stroke="#A69FF0" strokeWidth={5} opacity={0} style={{ filter: "drop-shadow(0 0 14px #A69FF0)" }} />
+        </svg>
+        <div className="film-book-bubble absolute top-[200px] left-[675px] w-[380px] rounded-2xl border-[3px] border-ink bg-lav px-5 py-4 text-ink opacity-0 shadow-[6px_7px_0_#05040f]">
+          <p className="font-label text-[18px] font-bold tracking-wide uppercase">Ella · in simple words</p>
+          <p className="mt-1 text-[24px] leading-snug font-bold">They&apos;re the cell&apos;s power plant: food goes in, energy comes out ⚡</p>
+        </div>
+        {/* The user's cursor: its tip is at (0, 0) */}
+        <svg className="film-user-cursor absolute top-0 left-0 z-30 h-[34px] w-[26px] overflow-visible opacity-0" viewBox="0 0 26 34">
+          <path d="M1 1 L1 27 L8 20 L13 32 L18 30 L13 18 L23 18 Z" fill="#fff" stroke={INK} strokeWidth={2.5} strokeLinejoin="round" />
+        </svg>
       </Scene>
 
       {/* Mail: spam gets kicked, the interview lands on Thursday */}
@@ -421,7 +478,7 @@ export function buildFilm(gsap: GSAP, reduceMotion: boolean) {
   // Light drifts to a new spot and colour each scene.
   const glowSpots: Record<FilmSceneID, [number, number, number, number, string]> = {
     hello: [380, 40, 520, 140, "#6E5CF0"], menubar: [120, -60, 760, 260, "#A69FF0"], talk: [700, 0, 80, 300, "#6E5CF0"],
-    screen: [240, 120, 760, 0, "#2F6FD6"], mail: [-40, 80, 760, 220, "#1E7A5C"], control: [640, 160, 60, 0, "#FF8C9E"],
+    screen: [240, 120, 760, 0, "#2F6FD6"], draw: [700, 140, 120, 40, "#F5B85C"], mail: [-40, 80, 760, 220, "#1E7A5C"], control: [640, 160, 60, 0, "#FF8C9E"],
     board: [200, -40, 720, 300, "#2F6FD6"], memory: [-20, 160, 800, 60, "#6E5CF0"], privacy: [380, 120, 400, 160, "#1C163A"], cta: [380, 40, 520, 160, "#6E5CF0"],
   };
   for (const cue of FILM_CUES) {
@@ -508,6 +565,32 @@ export function buildFilm(gsap: GSAP, reduceMotion: boolean) {
   timeline.from(".film-pill-tail", { scale: 0, rotate: 12, duration: D(0.3), ease: "back.out(2.6)" }, word("screen", 16) + D(0.2));
   wink(word("screen", 16) + D(0.1), 0.4);
   timeline.to(".actor-pen", { opacity: 0, duration: D(0.1) }, cueEnd("screen") + D(0.3));
+
+  // ── Draw: a book opens, the user circles a word and highlights a line, Ella sees it, explains it and reads along.
+  at = cueStart("draw");
+  timeline.from(".film-book", { y: 80 * move, rotate: -2 * move, autoAlpha: 0, duration: D(0.45), ease: "back.out(1.4)" }, at - D(0.2));
+  ella(1170, 600, 0.5, at - D(0.25), 0.4);
+  hop(word("draw", 2), 40);
+  const cursor = ".film-user-cursor";
+  timeline.fromTo(cursor, { x: 1000, y: 700, autoAlpha: 0 }, { x: 410, y: 313, autoAlpha: 1, duration: D(0.4) * (move || 0.01), ease: "power2.out" }, word("draw", 3) - D(0.1));
+  timeline.to(cursor, { motionPath: { path: "#film-path-circle" }, duration: D(0.6) * (move || 0.01), ease: "power1.inOut" }, word("draw", 4));
+  timeline.fromTo(".film-user-circle", { drawSVG: "0%" }, { drawSVG: "100%", duration: D(0.6), ease: "power1.inOut" }, word("draw", 4));
+  timeline.to(cursor, { x: 230, y: 453, duration: D(0.25) * (move || 0.01), ease: "power2.inOut" }, word("draw", 7) - D(0.05));
+  timeline.to(cursor, { motionPath: { path: "#film-path-highlight" }, duration: D(0.55) * (move || 0.01), ease: "power1.inOut" }, word("draw", 8));
+  timeline.fromTo(".film-user-highlight", { drawSVG: "0%" }, { drawSVG: "100%", duration: D(0.55), ease: "power1.inOut" }, word("draw", 8));
+  timeline.to(cursor, { autoAlpha: 0, duration: D(0.2) }, word("draw", 10) + D(0.3));
+  // "I'll see it": she flies up beside the page and her glow rings the marked line.
+  ella(1150, 290, 0.55, word("draw", 11) - D(0.1), 0.35, "back.out(1.6)");
+  rings(word("draw", 12), 1);
+  timeline.fromTo(".film-book-capture", { opacity: 0 }, { opacity: 1, duration: D(0.15), yoyo: true, repeat: 3, ease: "power2.out" }, word("draw", 12));
+  timeline.fromTo(".film-book-bubble", { autoAlpha: 0, scale: 0.4, rotate: -6 * move }, { autoAlpha: 1, scale: 1, rotate: 0, duration: D(0.35), ease: "back.out(2.2)" }, word("draw", 14) - D(0.05));
+  wink(word("draw", 14) + D(0.2), 0.4);
+  // "help you read": the follow-along line runs under the next sentences while she bobs along.
+  ella(1160, 510, 0.5, word("draw", 16), 0.3);
+  [17, 18, 19].forEach((wordIndex, lineIndex) => {
+    timeline.to(`.film-follow-${lineIndex}`, { scaleX: 1, duration: 0.22, ease: "none" }, word("draw", wordIndex));
+    hop(word("draw", wordIndex), 20);
+  });
 
   // ── Mail: cards rain in, Ella kicks the spam away and throws the interview onto Thursday.
   at = cueStart("mail");
