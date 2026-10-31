@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms of Service"
-      updated="30 October 2026"
+      updated="31 October 2026"
       intro={
         <p>
           These terms are the agreement between you and Shubham Varshney (&ldquo;we&rdquo;, &ldquo;us&rdquo;), the individual
@@ -75,8 +75,31 @@ export default function TermsPage() {
 
       <h2>Plans and payment</h2>
       <p>
-        Ella will offer paid plans. Before you subscribe, you&apos;ll see what each plan includes and what it costs, and
-        nothing is charged without your agreement.
+        A new account gets 50 free messages, once. After that, Ella Pro costs US$15 a month, plus any tax due, and includes:
+      </p>
+      <ul>
+        <li>unlimited talk, by hotkey or auto mode, subject to the fair use limit below;</li>
+        <li>100 Gmail automations a month;</li>
+        <li>100 whiteboard explanations a month;</li>
+        <li>200 web searches a month; and</li>
+        <li>200 screen readings a month, which include reading a web page.</li>
+      </ul>
+      <p>
+        <strong>Fair use.</strong> Talk is limited to 200 talks a day, so that the service stays fast and affordable for
+        everyone. A talk is one request you make and Ella answers. If you reach this limit, talk resumes the next day.
+      </p>
+      <p>
+        <strong>Monthly limits.</strong> Monthly limits reset on your billing date, and unused amounts don&apos;t carry over.
+        Requests that fail on our side aren&apos;t counted.
+      </p>
+      <p>
+        <strong>Payment.</strong> Our order process is run by our online reseller Paddle.com. Paddle.com is the Merchant of
+        Record for all orders, handles payment and tax, and provides customer service for orders. Subscriptions renew
+        automatically every month until cancelled. You can cancel anytime from the link in your receipt or in Ella. Your plan
+        then stays active until the end of the period you paid for.
+      </p>
+      <p>
+        <strong>Refunds.</strong> See our <Link href="/refund">Refund Policy</Link>.
       </p>
 
       <h2>No warranty</h2>

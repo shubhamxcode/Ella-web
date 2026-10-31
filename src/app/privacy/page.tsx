@@ -13,7 +13,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      updated="29 October 2026"
+      updated="31 October 2026"
       intro={
         <p>
           Ella is a voice assistant for your Mac. This page explains, in plain words, what she keeps, what she sends to the
@@ -114,6 +114,7 @@ export default function PrivacyPage() {
         <li><strong>Google (Gemini)</strong> is the AI model that writes Ella&apos;s replies, and does web searches, from your question, screenshot or page text when you share them, and the context described above.</li>
         <li><strong>Sarvam AI</strong> turns your voice into text and Ella&apos;s replies into her voice.</li>
         <li><strong>Google and Apple</strong> handle signing in.</li>
+        <li><strong>Paddle</strong> is the Merchant of Record for Ella Pro. When you subscribe, it handles your payment details, tax and receipts under its own privacy notice. We never see your full card number.</li>
         <li><strong>Vercel</strong> hosts this website.</li>
       </ul>
       <p>

@@ -66,6 +66,29 @@ const FEATURE_GROUPS = [
   ],
 ];
 
+const PLANS = [
+  {
+    name: "Free",
+    price: "$0",
+    period: "to start",
+    summary: "Try everything Ella does. No card needed.",
+    features: ["50 messages, once, for a new account", "Every feature included"],
+  },
+  {
+    name: "Ella Pro",
+    price: "$15",
+    period: "per month",
+    summary: "For using Ella every day. Cancel anytime.",
+    features: [
+      "Unlimited talk, by hotkey or auto mode",
+      "100 Gmail automations a month",
+      "100 whiteboard explanations a month",
+      "200 web searches a month",
+      "200 screen readings a month",
+    ],
+  },
+];
+
 const FAQS = [
   {
     question: "Which Macs will Ella run on?",
@@ -74,7 +97,7 @@ const FAQS = [
   },
   {
     question: "How much will it cost?",
-    answer: "Plans and prices are coming soon. You'll see exactly what's included and what it costs before anything is charged.",
+    answer: "Your first 50 messages are free, with no card. After that, Ella Pro is $15 a month. Cancel anytime.",
   },
   {
     question: "How does she read my Gmail?",
@@ -110,6 +133,7 @@ export default function Home() {
           <a href="#stage" className="hover:text-moon hover:underline">How it works</a>
           <a href="#doubts" className="hover:text-moon hover:underline">Her voice</a>
           <a href="#privacy" className="hover:text-moon hover:underline">Privacy</a>
+          <a href="#pricing" className="hover:text-moon hover:underline">Pricing</a>
           <a href="#faq" className="hover:text-moon hover:underline">FAQ</a>
         </nav>
         <a
@@ -273,6 +297,38 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Pricing */}
+        <section id="pricing" className="on-night mx-auto w-full max-w-[1180px] scroll-mt-10 px-[clamp(18px,4vw,40px)] py-24">
+          <h2 className="font-display text-[clamp(2.6rem,6vw,4.5rem)] leading-[1.02] text-moon uppercase">
+            Simple <Block>pricing.</Block>
+          </h2>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {PLANS.map((plan) => (
+              <div key={plan.name} className="cut flex flex-col rounded-[22px] bg-paper p-7 text-ink">
+                <h3 className="font-display text-3xl tracking-wide uppercase">{plan.name}</h3>
+                <p className="mt-3 font-display text-5xl">
+                  {plan.price}
+                  <span className="ml-2 font-sans text-lg font-medium text-ink/70">{plan.period}</span>
+                </p>
+                <p className="mt-3 text-[17px] leading-relaxed text-ink/80">{plan.summary}</p>
+                <ul className="mt-5 space-y-2 text-[17px] leading-relaxed">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex gap-2.5">
+                      <span aria-hidden className="font-bold">✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 max-w-[70ch] text-[15px] leading-relaxed text-moon/70">
+            Prices are in US dollars; tax may be added at checkout. Unlimited talk is subject to a fair use limit of 200 talks a
+            day. See the <Link href="/terms" className="underline underline-offset-4 hover:text-moon">Terms</Link> and{" "}
+            <Link href="/refund" className="underline underline-offset-4 hover:text-moon">Refund Policy</Link>.
+          </p>
+        </section>
+
         {/* Download */}
         <section id="download" className="relative scroll-mt-0 overflow-hidden border-b-[2.5px] border-ink bg-lav text-ink">
           <div
@@ -335,6 +391,7 @@ export default function Home() {
             <span>Demo screens on this page use sample data.</span>
             <Link href="/privacy" className="hover:text-moon hover:underline">Privacy</Link>
             <Link href="/terms" className="hover:text-moon hover:underline">Terms</Link>
+            <Link href="/refund" className="hover:text-moon hover:underline">Refunds</Link>
           </p>
         </div>
       </footer>
