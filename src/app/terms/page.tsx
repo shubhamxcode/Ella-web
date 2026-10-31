@@ -75,7 +75,7 @@ export default function TermsPage() {
 
       <h2>Plans and payment</h2>
       <p>
-        A new account gets 50 free messages, once per account and once per Mac. After that, Ella Pro costs US$15 a month, plus any tax due, and includes
+        Every new account gets 50 free messages, once. After that, Ella Pro costs US$15 a month, plus any tax due, and includes
         1,500 credits a month. Each request Ella answers uses credits:
       </p>
       <ul>

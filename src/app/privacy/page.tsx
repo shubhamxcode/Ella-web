@@ -109,8 +109,7 @@ export default function PrivacyPage() {
       <h3>Your plan and usage</h3>
       <p>
         We store your plan and how much of it you&apos;ve used, as counts: credits, tokens and the kind of each request. Never
-        the words. We also keep a one-way hash of your Mac&apos;s hardware id, so each Mac gets the free messages once. This is
-        how limits and billing work.
+        the words. This is how limits and billing work.
       </p>
 
       <h2>Who processes your data</h2>

@@ -72,7 +72,7 @@ const PLANS = [
     price: "$0",
     period: "to start",
     summary: "Try everything Ella does. No card needed.",
-    features: ["50 messages, once per account and Mac", "Every feature included"],
+    features: ["50 free messages for every new account", "Every feature included"],
   },
   {
     name: "Ella Pro",
