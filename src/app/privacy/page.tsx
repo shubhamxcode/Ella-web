@@ -106,6 +106,12 @@ export default function PrivacyPage() {
         tell you when Ella is ready, and nothing else.
       </p>
 
+      <h3>Your plan and usage</h3>
+      <p>
+        We store your plan and how much of it you&apos;ve used, as counts: credits, tokens and the kind of each request. Never
+        the words. This is how limits and billing work.
+      </p>
+
       <h2>Who processes your data</h2>
       <p>Ella runs on a few services, each used only to do its part:</p>
       <ul>
