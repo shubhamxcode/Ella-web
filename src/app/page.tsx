@@ -80,7 +80,7 @@ const PLANS = [
     period: "per month",
     summary: "For using Ella every day. Cancel anytime.",
     features: [
-      "Unlimited talk, by hotkey or auto mode",
+      "6,000 talks a month, by hotkey or auto mode",
       "100 Gmail automations a month",
       "100 whiteboard explanations a month",
       "200 web searches a month",
@@ -323,8 +323,7 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-6 max-w-[70ch] text-[15px] leading-relaxed text-moon/70">
-            Prices are in US dollars; tax may be added at checkout. Unlimited talk is subject to a fair use limit of 200 talks a
-            day. See the <Link href="/terms" className="underline underline-offset-4 hover:text-moon">Terms</Link> and{" "}
+            Prices are in US dollars; tax may be added at checkout. See the <Link href="/terms" className="underline underline-offset-4 hover:text-moon">Terms</Link> and{" "}
             <Link href="/refund" className="underline underline-offset-4 hover:text-moon">Refund Policy</Link>.
           </p>
         </section>

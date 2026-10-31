@@ -78,18 +78,14 @@ export default function TermsPage() {
         A new account gets 50 free messages, once. After that, Ella Pro costs US$15 a month, plus any tax due, and includes:
       </p>
       <ul>
-        <li>unlimited talk, by hotkey or auto mode, subject to the fair use limit below;</li>
+        <li>6,000 talks a month, by hotkey or auto mode;</li>
         <li>100 Gmail automations a month;</li>
         <li>100 whiteboard explanations a month;</li>
         <li>200 web searches a month; and</li>
         <li>200 screen readings a month, which include reading a web page.</li>
       </ul>
       <p>
-        <strong>Fair use.</strong> Talk is limited to 200 talks a day, so that the service stays fast and affordable for
-        everyone. A talk is one request you make and Ella answers. If you reach this limit, talk resumes the next day.
-      </p>
-      <p>
-        <strong>Monthly limits.</strong> Monthly limits reset on your billing date, and unused amounts don&apos;t carry over.
+        <strong>Monthly limits.</strong> A talk is one request you make and Ella answers. Monthly limits reset on your billing date, and unused amounts don&apos;t carry over.
         Requests that fail on our side aren&apos;t counted.
       </p>
       <p>
