@@ -80,11 +80,12 @@ const PLANS = [
     period: "per month",
     summary: "For using Ella every day. Cancel anytime.",
     features: [
-      "6,000 talks a month, by hotkey or auto mode",
-      "100 Gmail automations a month",
-      "100 whiteboard explanations a month",
-      "200 web searches a month",
-      "200 screen readings a month",
+      "1,500 credits every month",
+      "Talk: 1 credit",
+      "Screen reading: 2 credits",
+      "Web search: 3 credits",
+      "Gmail automation: 3 credits",
+      "Whiteboard explanation: 3 credits",
     ],
   },
 ];

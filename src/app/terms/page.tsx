@@ -75,17 +75,18 @@ export default function TermsPage() {
 
       <h2>Plans and payment</h2>
       <p>
-        A new account gets 50 free messages, once. After that, Ella Pro costs US$15 a month, plus any tax due, and includes:
+        A new account gets 50 free messages, once. After that, Ella Pro costs US$15 a month, plus any tax due, and includes
+        1,500 credits a month. Each request Ella answers uses credits:
       </p>
       <ul>
-        <li>6,000 talks a month, by hotkey or auto mode;</li>
-        <li>100 Gmail automations a month;</li>
-        <li>100 whiteboard explanations a month;</li>
-        <li>200 web searches a month; and</li>
-        <li>200 screen readings a month, which include reading a web page.</li>
+        <li>talk, by hotkey or auto mode: 1 credit;</li>
+        <li>a screen reading, including reading a web page: 2 credits;</li>
+        <li>a web search: 3 credits;</li>
+        <li>a Gmail automation: 3 credits; and</li>
+        <li>a whiteboard explanation: 3 credits.</li>
       </ul>
       <p>
-        <strong>Monthly limits.</strong> A talk is one request you make and Ella answers. Monthly limits reset on your billing date, and unused amounts don&apos;t carry over.
+        <strong>Credits.</strong> Credits reset on your billing date, and unused credits don&apos;t carry over. To keep the service reliable, unusually heavy use may also be limited, even if credits remain.
         Requests that fail on our side aren&apos;t counted.
       </p>
       <p>
