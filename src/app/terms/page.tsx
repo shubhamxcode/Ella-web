@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms of Service"
-      updated="31 October 2026"
+      updated="4 November 2026"
       intro={
         <p>
           These terms are the agreement between you and Shubham Varshney (&ldquo;we&rdquo;, &ldquo;us&rdquo;), the individual
@@ -75,7 +75,7 @@ export default function TermsPage() {
 
       <h2>Plans and payment</h2>
       <p>
-        Every new account gets 50 free messages, once. After that, Ella Pro costs US$15 a month, plus any tax due, and includes
+        Every new account gets 50 free messages, once. After that, Ella Pro costs US$20 a month, plus any tax due, and includes
         1,500 credits a month. Each request Ella answers uses credits:
       </p>
       <ul>

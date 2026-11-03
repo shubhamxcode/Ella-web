@@ -76,7 +76,7 @@ const PLANS = [
   },
   {
     name: "Ella Pro",
-    price: "$15",
+    price: "$20",
     period: "per month",
     summary: "For using Ella every day. Cancel anytime.",
     features: [
@@ -98,7 +98,7 @@ const FAQS = [
   },
   {
     question: "How much will it cost?",
-    answer: "Your first 50 messages are free, with no card. After that, Ella Pro is $15 a month. Cancel anytime.",
+    answer: "Your first 50 messages are free, with no card. After that, Ella Pro is $20 a month. Cancel anytime.",
   },
   {
     question: "How does she read my Gmail?",
