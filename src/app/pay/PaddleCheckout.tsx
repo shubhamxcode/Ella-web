@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-/** Client-side tokens are public by design. Going live swaps this and the environment. */
-const PADDLE_CLIENT_TOKEN = "test_e65c310bd7f551018d7e1207b76";
-const PADDLE_ENVIRONMENT = "sandbox";
+/** Client-side tokens are public by design. Going live sets both in Vercel: a live_ token and "production". */
+const PADDLE_CLIENT_TOKEN = process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN ?? "";
+const PADDLE_ENVIRONMENT = process.env.NEXT_PUBLIC_PADDLE_ENVIRONMENT ?? "sandbox";
 
 /** Paddle.js usually opens the checkout itself; after this long, the page asks it to. */
 const CHECKOUT_OPEN_WAIT_MILLISECONDS = 2500;
@@ -27,7 +27,8 @@ export function PaddleCheckout() {
     script.src = "https://cdn.paddle.com/paddle/v2/paddle.js";
     script.onload = () => {
       const paddle = (window as unknown as { Paddle: PaddleGlobal }).Paddle;
-      paddle.Environment.set(PADDLE_ENVIRONMENT);
+      // Live is Paddle.js's default; only sandbox has to be named.
+      if (PADDLE_ENVIRONMENT === "sandbox") paddle.Environment.set("sandbox");
       paddle.Initialize({
         token: PADDLE_CLIENT_TOKEN,
         eventCallback: (event) => {
