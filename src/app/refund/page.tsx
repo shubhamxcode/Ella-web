@@ -14,7 +14,7 @@ export default function RefundPage() {
   return (
     <LegalPage
       title="Refund Policy"
-      updated="31 October 2026"
+      updated="6 November 2026"
       intro={
         <p>
           Ella has 50 free messages so you can try her before you pay. If Ella Pro still isn&apos;t right for you, here&apos;s
@@ -34,7 +34,7 @@ export default function RefundPage() {
 
       <h2>How to ask</h2>
       <p>
-        Paddle.com handles our orders, so you can ask through the link in your receipt, or write to{" "}
+        Creem handles our orders, so you can ask through the link in your receipt, or write to{" "}
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> from the address on your account. Refunds go back to the way you
         paid.
       </p>

@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms of Service"
-      updated="4 November 2026"
+      updated="6 November 2026"
       intro={
         <p>
           These terms are the agreement between you and Shubham Varshney (&ldquo;we&rdquo;, &ldquo;us&rdquo;), the individual
@@ -90,7 +90,7 @@ export default function TermsPage() {
         Requests that fail on our side aren&apos;t counted.
       </p>
       <p>
-        <strong>Payment.</strong> Our order process is run by our online reseller Paddle.com. Paddle.com is the Merchant of
+        <strong>Payment.</strong> Our order process is run by our online reseller Creem (creem.io). Creem is the Merchant of
         Record for all orders, handles payment and tax, and provides customer service for orders. Subscriptions renew
         automatically every month until cancelled. You can cancel anytime from the link in your receipt or in Ella. Your plan
         then stays active until the end of the period you paid for.
