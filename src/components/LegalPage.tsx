@@ -40,12 +40,13 @@ export function LegalPage({ title, updated, intro, children }: { title: string; 
             <span className="-my-4 -ml-2">
               <EllaFace size={20} />
             </span>
-            Ella · heyyella.com
+            Ella · heyyella.com · Independent, not affiliated with Google or Apple
           </p>
           <p className="flex gap-5">
             <Link href="/privacy" className="hover:text-moon hover:underline">Privacy</Link>
             <Link href="/terms" className="hover:text-moon hover:underline">Terms</Link>
             <Link href="/refund" className="hover:text-moon hover:underline">Refunds</Link>
+            <Link href="/acceptable-use" className="hover:text-moon hover:underline">Acceptable use</Link>
           </p>
         </div>
       </footer>

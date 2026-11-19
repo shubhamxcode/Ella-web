@@ -385,13 +385,14 @@ export default function Home() {
             <span className="-my-4 -ml-2">
               <EllaFace size={20} />
             </span>
-            Ella · heyyella.com · For Mac
+            Ella · heyyella.com · For Mac · Independent, not affiliated with Google or Apple
           </p>
           <p className="flex flex-wrap gap-x-5 gap-y-1">
             <span>Demo screens on this page use sample data.</span>
             <Link href="/privacy" className="hover:text-moon hover:underline">Privacy</Link>
             <Link href="/terms" className="hover:text-moon hover:underline">Terms</Link>
             <Link href="/refund" className="hover:text-moon hover:underline">Refunds</Link>
+            <Link href="/acceptable-use" className="hover:text-moon hover:underline">Acceptable use</Link>
           </p>
         </div>
       </footer>

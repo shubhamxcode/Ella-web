@@ -46,7 +46,9 @@ export default function TermsPage() {
         <li>overload, reverse engineer, resell or get around the limits of Ella or the services behind her;</li>
         <li>create content that infringes someone else&apos;s rights.</li>
       </ul>
-      <p>We may limit how much you can use Ella to keep her working for everyone, and may suspend accounts that break these terms.</p>
+      <p>
+        Our <Link href="/acceptable-use">Acceptable Use Policy</Link> lists these in more detail. We may limit how much you can use Ella to keep her working for everyone, and may suspend accounts that break these terms.
+      </p>
 
       <h2>You stay in control</h2>
       <p>
