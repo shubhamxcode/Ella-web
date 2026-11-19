@@ -4,7 +4,7 @@
  * page. Turn it on by setting this to true (the download Worker has its own
  * switch, DOWNLOADS_ENABLED in ella/download-worker/wrangler.toml).
  */
-export const DOWNLOADS_ENABLED = false;
+export const DOWNLOADS_ENABLED = true;
 
 /**
  * The Ella build people download. Update this with every release
