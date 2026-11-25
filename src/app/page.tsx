@@ -393,6 +393,7 @@ export default function Home() {
             <Link href="/terms" className="hover:text-moon hover:underline">Terms</Link>
             <Link href="/refund" className="hover:text-moon hover:underline">Refunds</Link>
             <Link href="/acceptable-use" className="hover:text-moon hover:underline">Acceptable use</Link>
+            <a href="mailto:shubh.varshneycode@gmail.com" className="hover:text-moon hover:underline">Contact</a>
           </p>
         </div>
       </footer>

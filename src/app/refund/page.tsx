@@ -14,7 +14,7 @@ export default function RefundPage() {
   return (
     <LegalPage
       title="Refund Policy"
-      updated="6 November 2026"
+      updated="25 November 2026"
       intro={
         <p>
           Ella has 50 free messages so you can try her before you pay. If Ella Pro still isn&apos;t right for you, here&apos;s
@@ -34,9 +34,21 @@ export default function RefundPage() {
 
       <h2>How to ask</h2>
       <p>
-        Creem handles our orders, so you can ask through the link in your receipt, or write to{" "}
-        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> from the address on your account. Refunds go back to the way you
-        paid.
+        Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> from the address on your account, or reply to your
+        receipt. We answer within 2 business days. Our reseller, Dodo Payments, processes approved refunds back to the way
+        you paid, and they usually arrive within 3 to 15 business days, depending on your bank.
+      </p>
+
+      <h2>Cancelling</h2>
+      <p>
+        Cancel anytime from the Manage button in Ella&apos;s panel or from the link in your receipt. You won&apos;t be charged
+        again, and Ella Pro stays active until the end of the period you&apos;ve paid for.
+      </p>
+
+      <h2>Problems with a charge</h2>
+      <p>
+        If something looks wrong on your statement, please write to us first: we can usually fix it the same day. This
+        doesn&apos;t limit your right to dispute a charge with your bank.
       </p>
 
       <h2>Your legal rights</h2>

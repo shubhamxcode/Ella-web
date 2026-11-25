@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms of Service"
-      updated="6 November 2026"
+      updated="25 November 2026"
       intro={
         <p>
           These terms are the agreement between you and Shubham Varshney (&ldquo;we&rdquo;, &ldquo;us&rdquo;), the individual
@@ -92,10 +92,12 @@ export default function TermsPage() {
         Requests that fail on our side aren&apos;t counted.
       </p>
       <p>
-        <strong>Payment.</strong> Our order process is run by our online reseller Creem (creem.io). Creem is the Merchant of
-        Record for all orders, handles payment and tax, and provides customer service for orders. Subscriptions renew
-        automatically every month until cancelled. You can cancel anytime from the link in your receipt or in Ella. Your plan
-        then stays active until the end of the period you paid for.
+        <strong>Payment.</strong> Our order process is conducted by our online reseller Dodo Payments
+        (dodopayments.com). Dodo Payments is the Merchant of Record for all our orders: it is the seller of record, processes
+        your payment, and handles sales tax, receipts and billing questions. Your card statement shows a charge from
+        Dodo Payments. Subscriptions renew automatically every month until cancelled. You can cancel anytime from
+        the Manage button in Ella&apos;s panel or from the link in your receipt. Your plan then stays active until the end
+        of the period you paid for.
       </p>
       <p>
         <strong>Refunds.</strong> See our <Link href="/refund">Refund Policy</Link>.
